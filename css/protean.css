@@ -37,3 +37,11 @@
     transition: all 1s ease;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 25% 100%, 0 70%);
 }
+
+.section-container .section-img-left {
+    transform: rotate(0deg);
+}
+
+.section-container .section-img-right {
+    transform: rotate(0deg);
+}
