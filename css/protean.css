@@ -37,3 +37,11 @@
     transition: all 1s ease;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 25% 100%, 0 70%);
 }
+
+.main-nav1 {
+    overflow-y: inherit; /* default value */
+}
+
+.dropdown-menu.show {
+    z-index: 1050;
+}
