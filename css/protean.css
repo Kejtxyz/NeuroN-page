@@ -37,3 +37,7 @@
     transition: all 1s ease;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 25% 100%, 0 70%);
 }
+
+.input-close-icon {
+    display: none;
+}

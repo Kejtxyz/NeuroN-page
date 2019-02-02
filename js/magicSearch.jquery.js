@@ -5,6 +5,8 @@
         selector: null,
         element: null,
         primaryMenuSelector: null,
+        closeIconSelector: null,
+        searchButtonSelector: null,
         hideableElementsSelector: null,
         hideAnimation: 'zoomOut',
         showAnimation: 'zoomIn',
@@ -29,8 +31,27 @@
         }
     };
 
+    var hideCloseIcon = function() {
+        $(settings.closeIconSelector).css('display','none');
+    };
+
+    var hideSearchButton = function() {
+        $(settings.searchButtonSelector).css('display', 'none');
+    };
+
+    var showSearchButton = function() {
+        $(settings.searchButtonSelector).css('display', 'block');
+    };
+
+    var showCloseIcon = function() {
+        var $closeIcon = $(settings.closeIconSelector);
+
+        $closeIcon.css('display','block');
+        $closeIcon.addClass("animated fadeIn");
+    };
+
     var hidePrimaryMenu = function() {
-        $hideableElements = $(settings.primaryMenuSelector).find(settings.hideableElementsSelector);
+        var $hideableElements = $(settings.primaryMenuSelector).find(settings.hideableElementsSelector);
         $hideableElements.addClass("animated " + settings.hideAnimation);
 
         hidden = true;
@@ -52,6 +73,9 @@
         var $searchInput    = $(settings.searchInputSelector);
         $searchInput.removeClass("d-none");
         $searchInput.addClass("animated stretch");
+
+        showCloseIcon();
+        hideSearchButton();
     };
 
     var hideSearchbar = function() {
@@ -60,8 +84,17 @@
         if(!isInvisible) {
             $searchInput.removeClass("stretch");
             $searchInput.addClass("squash");
-            $searchInput.addClass("d-none");
+            setTimeout(function() {
+                $searchInput.addClass("d-none");
+            }, 1000);
         }
+    };
+
+    var onCloseIconClick = function() {
+        hideSearchbar();
+        showSearchButton();
+        hideCloseIcon();
+        showPrimaryMenu();
     };
 
     $.fn.magicSearch = function(options) {
@@ -74,6 +107,10 @@
             $(document).on('click', settings.selector, onSearchClick);
         } else {
             $(this).on('click', onSearchClick);
+        }
+
+        if(typeof settings.closeIconSelector !== "undefined" && settings.closeIconSelector !== null) {
+            $(document).on('click', settings.closeIconSelector, onCloseIconClick);
         }
     };
 }(jQuery));
