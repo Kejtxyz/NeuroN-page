@@ -9,7 +9,9 @@ $(document).magicArrow({
 
 $('#magicSearch').magicSearch({
     primaryMenuSelector:        '#right-itemlist',
-    hideableElementsSelector:   '.hide-when-search'
+    hideableElementsSelector:   '.hide-when-search',
+    closeIconSelector:          '.input-close-icon',
+    searchButtonSelector:       '#magicSearchWrapper'   // Used to hide search button
 });
 
 $(window).magicNav({
