@@ -45,3 +45,10 @@
 .section-container .section-img-right {
     transform: rotate(0deg);
 }
+.main-nav1 {
+    overflow-y: inherit; /* default value */
+}
+
+.dropdown-menu.show {
+    z-index: 1050;
+}
