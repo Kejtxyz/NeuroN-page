@@ -1,0 +1,21 @@
+.powiekszenie {
+    border-radius: 25px 25px 0px 0px;
+    overflow: hidden;
+    padding: 0;
+    border: 0px solid #000;
+    border: 0px none;
+}
+.powiekszenie img {
+    transition-duration: 1s;
+    margin: 0 auto;
+    display: block;
+	
+}
+.powiekszenie img:hover {
+    filter: brightness(60%);
+	
+	transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform:  scale(1.2);
+    z-index: 0;
+}
