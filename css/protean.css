@@ -38,10 +38,19 @@
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 25% 100%, 0 70%);
 }
 
+.input-close-icon {
+    display: none;
+}
 .main-nav1 {
     overflow-y: inherit; /* default value */
 }
 
 .dropdown-menu.show {
     z-index: 1050;
+}
+
+.input-close-icon i {
+    position: absolute;
+    top: 14px;
+    right: 12px;
 }
