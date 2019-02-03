@@ -13,8 +13,25 @@
             animationLocked = false;
         };
 
+        var isVisibleWithinViewport = function() {
+            var elementOffset   = $element.offset();
+            var windowScrollTop =  $(window).scrollTop();
+
+            var screen = {
+                top:        windowScrollTop,
+                bottom:     windowScrollTop + $(window).innerHeight()
+            };
+
+            var element = {
+                top:        elementOffset.top,
+                bottom:     elementOffset.top + $element.outerHeight()
+            };
+
+            return (screen.bottom > element.top) && (screen.top < element.bottom);
+        };
+
         var changeAnimation = function(direction) {
-            if(animationLocked === false) {
+            if(animationLocked === false && isVisibleWithinViewport()) {
                 lockAnimationChange();
                 var currentRotationDegrees  = getRotationDegrees($element, false);
                 var nextRotationDegrees     = null;
