@@ -48,3 +48,9 @@
 .dropdown-menu.show {
     z-index: 1050;
 }
+
+.input-close-icon i {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+}

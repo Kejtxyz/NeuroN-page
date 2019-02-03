@@ -36,11 +36,17 @@
     };
 
     var hideSearchButton = function() {
-        $(settings.searchButtonSelector).css('display', 'none');
+        var $searchButton = $(settings.searchButtonSelector);
+        $searchButton.removeClass("delay-1s");
+        $searchButton.addClass("animated faster fadeOut");
+        $searchButton.css("pointer-events", "none");
     };
 
     var showSearchButton = function() {
-        $(settings.searchButtonSelector).css('display', 'block');
+        var $searchButton = $(settings.searchButtonSelector);
+        $searchButton.css("pointer-events", "auto");
+        $searchButton.removeClass("animated fadeOut");
+        $searchButton.addClass("animated fadeIn delay-1s");
     };
 
     var showCloseIcon = function() {
@@ -70,12 +76,13 @@
     };
 
     var showSearchbar = function() {
+        hideSearchButton();
+
         var $searchInput    = $(settings.searchInputSelector);
         $searchInput.removeClass("d-none");
-        $searchInput.addClass("animated stretch");
+        $searchInput.addClass("animated slow stretch");
 
         showCloseIcon();
-        hideSearchButton();
     };
 
     var hideSearchbar = function() {
