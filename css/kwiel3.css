@@ -1,9 +1,10 @@
 .powiekszenie {
     border-radius: 25px 25px 0px 0px;
     overflow: hidden;
-    padding: 0;
+    margin-top: 6px;
+    /* padding: 0;
     border: 0px solid #000;
-    border: 0px none;
+    border: 0px none; */
 }
 .powiekszenie img {
     transition-duration: 1s;
@@ -19,3 +20,32 @@
     -moz-transform:  scale(1.2);
     z-index: 0;
 }
+
+.container-fluid {
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.card-body {
+    padding: 8px;
+}
+
+.card {
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+    margin-bottom: 8px;
+    margin-top:  8px;
+}
+
+.powiekszenie .img-fluid {
+    margin-bottom: 8px;
+}
+
+.p-2 {
+    margin-bottom: 4px;
+}
+
