@@ -45,10 +45,11 @@
 
 .section-container .section-img-right {
     transform: rotate(0deg);
+}
 
-/* .input-close-icon {
+.input-close-icon {
     display: none;
-} */
+}
   
 .main-nav1 {
     overflow-y: inherit; /* default value */
