@@ -1,4 +1,9 @@
 (function($) {
+    const SCROLL_DIRECTION_DOWN     = 'down';
+    const SCROLL_DIRECTION_UP       = 'up';
+
+    var previousScrollDirection     = null;
+
     var previousScrollTop = $(window).scrollTop();
 
     var onScrollDown = function(e) {
@@ -15,6 +20,11 @@
 
     var onScroll = function(e) {
         var currentScrollTop = $(this).scrollTop();
+        var scrollDirection = (previousScrollTop > currentScrollTop) ? SCROLL_DIRECTION_UP : SCROLL_DIRECTION_DOWN;
+
+        if(scrollDirection === previousScrollDirection) {
+            return;
+        }
 
         if (currentScrollTop <= 75) {
             $(settings.nav).css('animation-duration', '0s');
@@ -22,12 +32,15 @@
             $(settings.nav).css('animation-duration', '1s');
         }
 
-        if (previousScrollTop > currentScrollTop) {
+        if (scrollDirection === SCROLL_DIRECTION_UP) {
             onScrollUp(e);
-        } else {
+        }
+        if (scrollDirection === SCROLL_DIRECTION_DOWN){
             onScrollDown(e);
         }
-        previousScrollTop = currentScrollTop;
+
+        previousScrollTop       = currentScrollTop;
+        previousScrollDirection = scrollDirection;
     };
 
     var defaults = {
