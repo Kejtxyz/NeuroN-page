@@ -32,6 +32,7 @@
             } else {
                 $(settings.nav).css('animation-duration', '1s');
             }
+        }
 
         if (scrollDirection === SCROLL_DIRECTION_UP) {
             onScrollUp(e);
