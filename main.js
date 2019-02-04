@@ -24,7 +24,7 @@ $(document).magicLine({
 
 var rotatorConfig = {
     rotationDegrees:        1,
-    rotationDurationMs:     150,
+    rotationDurationMs:     300,
     minimalWindowWidthPx:   540
 };
 
