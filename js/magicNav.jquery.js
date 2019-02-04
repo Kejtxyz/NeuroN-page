@@ -16,18 +16,20 @@
     var onScroll = function(e) {
         var currentScrollTop = $(this).scrollTop();
 
-        if (currentScrollTop <= 75) {
-            $(settings.nav).css('animation-duration', '0s');
-        } else {
-            $(settings.nav).css('animation-duration', '1s');
-        }
+        if ($(settings.nav).width() > 540) {
+            if (currentScrollTop <= 75) {
+                $(settings.nav).css('animation-duration', '0s');
+            } else {
+                $(settings.nav).css('animation-duration', '1s');
+            }
 
-        if (previousScrollTop > currentScrollTop) {
-            onScrollUp(e);
-        } else {
-            onScrollDown(e);
+            if (previousScrollTop > currentScrollTop) {
+                onScrollUp(e);
+            } else {
+                onScrollDown(e);
+            }
+            previousScrollTop = currentScrollTop;
         }
-        previousScrollTop = currentScrollTop;
     };
 
     var defaults = {
