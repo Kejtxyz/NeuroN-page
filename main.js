@@ -23,8 +23,9 @@ $(document).magicLine({
 });
 
 var rotatorConfig = {
-    rotationDegrees: 1,
-    rotationDurationMs: 75
+    rotationDegrees:        1,
+    rotationDurationMs:     75,
+    minimalWindowWidthPx:   540
 };
 
 $('#section-container-img-1 > img').magicRotator(rotatorConfig);
