@@ -21,7 +21,11 @@
     var onScroll = function(e) {
         var currentScrollTop = $(this).scrollTop();
         var scrollDirection = (previousScrollTop > currentScrollTop) ? SCROLL_DIRECTION_UP : SCROLL_DIRECTION_DOWN;
-        
+
+        if(scrollDirection === previousScrollDirection) {
+            return;
+        }
+
         if ($(document).width() > 540) {
             if (currentScrollTop <= 75) {
                 $(settings.nav).css('animation-duration', '0s');
@@ -31,6 +35,7 @@
         }
 
         if (scrollDirection === SCROLL_DIRECTION_UP) {
+            console.log('doin scroll up');
             onScrollUp(e);
         }
         if (scrollDirection === SCROLL_DIRECTION_DOWN){
