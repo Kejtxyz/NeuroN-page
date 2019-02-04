@@ -22,6 +22,8 @@
     var settings = defaults;
 
     var onSearchClick = function(e) {
+        settings.element.css("z-index", -10000);
+        settings.element.css("pointer-events", "none");
         if(hidden) {
             hideSearchbar();
             setTimeout(showPrimaryMenu, settings.delayBetweenShowPrimaryMenuAnimationStart);
@@ -69,6 +71,11 @@
         $elements.addClass("animated " + settings.showAnimation);
 
         hidden = false;
+
+        setTimeout(function() {
+            $elements.removeClass("animated " + settings.hideAnimation);
+            $elements.removeClass("animated " + settings.showAnimation);
+        }, 1500);
     };
 
     var showResultsPanel = function() {
@@ -98,10 +105,12 @@
     };
 
     var onCloseIconClick = function() {
+        settings.element.css("z-index", 1060);
         hideSearchbar();
         showSearchButton();
         hideCloseIcon();
         showPrimaryMenu();
+        settings.element.css("pointer-events", "auto");
     };
 
     $.fn.magicSearch = function(options) {
