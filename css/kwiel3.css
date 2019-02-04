@@ -27,13 +27,13 @@
 }
 
 .card-body {
-    padding: 8px;
+    padding: 0px;
 }
 
 .card {
     border-radius: 25px;
     border: none;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0.5rem 1rem rgba(214, 197, 246, 0.50);
 }
 
 .card-title {
