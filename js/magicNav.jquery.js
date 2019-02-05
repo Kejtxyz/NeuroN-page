@@ -1,9 +1,4 @@
 (function($) {
-    const SCROLL_DIRECTION_DOWN     = 'down';
-    const SCROLL_DIRECTION_UP       = 'up';
-
-    var previousScrollDirection     = null;
-
     var previousScrollTop = $(window).scrollTop();
 
     var onScrollDown = function(e) {
@@ -20,27 +15,21 @@
 
     var onScroll = function(e) {
         var currentScrollTop = $(this).scrollTop();
-        var scrollDirection = (previousScrollTop > currentScrollTop) ? SCROLL_DIRECTION_UP : SCROLL_DIRECTION_DOWN;
 
-        if(scrollDirection === previousScrollDirection) {
-            return;
-        }
+        if ($(settings.nav).width() > 540) {
+            if (currentScrollTop <= 75) {
+                $(settings.nav).css('animation-duration', '0s');
+            } else {
+                $(settings.nav).css('animation-duration', '1s');
+            }
 
-        if (currentScrollTop <= 75) {
-            $(settings.nav).css('animation-duration', '0s');
-        } else {
-            $(settings.nav).css('animation-duration', '1s');
+            if (previousScrollTop > currentScrollTop) {
+                onScrollUp(e);
+            } else {
+                onScrollDown(e);
+            }
+            previousScrollTop = currentScrollTop;
         }
-
-        if (scrollDirection === SCROLL_DIRECTION_UP) {
-            onScrollUp(e);
-        }
-        if (scrollDirection === SCROLL_DIRECTION_DOWN){
-            onScrollDown(e);
-        }
-
-        previousScrollTop       = currentScrollTop;
-        previousScrollDirection = scrollDirection;
     };
 
     var defaults = {
