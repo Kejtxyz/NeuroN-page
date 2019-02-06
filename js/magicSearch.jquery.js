@@ -15,10 +15,6 @@
         delayBetweenSearchBarAnimationStart: 250
     };
 
-    var validate = function(config) {
-
-    };
-
     var settings = defaults;
 
     var onSearchClick = function(e) {
@@ -69,10 +65,6 @@
         $elements.addClass("animated " + settings.showAnimation);
 
         hidden = false;
-    };
-
-    var showResultsPanel = function() {
-
     };
 
     var showSearchbar = function() {
