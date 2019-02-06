@@ -22,6 +22,11 @@ $(document).magicLine({
     elementSelector:    '#main-header'
 });
 
-$('#section-container-img-1 > img').magicRotator();
-$('#section-container-img-2 > img').magicRotator();
-$('#section-container-img-3 > img').magicRotator();
+var rotatorConfig = {
+    rotationDegrees: 1,
+    rotationDurationMs: 300
+};
+
+$('#section-container-img-1 > img').magicRotator(rotatorConfig);
+$('#section-container-img-2 > img').magicRotator(rotatorConfig);
+$('#section-container-img-3 > img').magicRotator(rotatorConfig);
