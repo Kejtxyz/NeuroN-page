@@ -118,7 +118,6 @@
 
     $.fn.magicSearch = function(options) {
         settings = $.extend(defaults, options);
-        validate(settings);
 
         settings.element = (settings.selector !== null) ? $(settings.selector) : $(this);
 
