@@ -24,10 +24,12 @@
     z-index: 1050;
 }
 
-.input-close-icon i {
+.input-close-icon em {
     position: absolute;
-    top: 14px;
-    right: 12px;
+    top: 8px;
+    right: 8px;
+    color: white;
+    font-size: 2em;
 }
 
 #nav2 span.navbar-toggler {
