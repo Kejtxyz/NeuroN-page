@@ -111,13 +111,12 @@ img#logo-main-nav {
         margin-bottom: 25px; }
 
 .section-container {
-  padding: 50px 0 50px 0;
+  padding-top: 50px;
   width: 100%;
   overflow-x: hidden;
   overflow-y: hidden; }
   .section-container .img-container {
-    margin-top: 50px;
-    height: 400px; }
+    margin-top: 50px; }
   .section-container img {
     width: 350px;
     height: 350px;
@@ -132,7 +131,6 @@ img#logo-main-nav {
     margin-left: 80px; }
   .section-container .article-text {
     width: 60%;
-    height: 400px;
     padding: 120px 200px 120px 200px; }
     .section-container .article-text h4 {
       margin-bottom: 1.5rem;
@@ -181,9 +179,23 @@ div#copyright {
 
 @media all and (max-width: 992px) {
   .to-hide {
-    display: none; } }
+    display: none; }
+  .section-container .article-text {
+    padding: 0 40px;
+    margin-top: 30px;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%; }
+  .section-container .section-img-left {
+    transform: rotate(0);
+    margin-left: auto;
+    margin-right: auto; }
+  .section-container .section-img-right {
+    transform: rotate(0);
+    margin-right: auto;
+    margin-left: auto; } }
 
-@media all and (max-width: 992px) {
+@media all and (max-width: 425px) {
   .main-nav1 .nav-item {
     text-align: center; }
   #main-header .header-caption {
@@ -198,21 +210,24 @@ div#copyright {
         font-size: 2.5em;
         margin-bottom: 20px; }
   .section-container .article-text {
-    padding: 10px 50px 10px 50px;
     margin-top: 40px;
     margin-right: 0;
     margin-left: 0;
-    width: 100%;
-    text-align: center;
-    height: 250px; }
-  .section-container .img-container {
-    margin-top: 40px;
-    height: 250px; }
-  .section-container img {
-    width: 50vw;
-    height: 50vw; }
+    width: 100%; }
+  .section-container .section-img-left {
+    transform: rotate(0);
+    margin-left: auto; }
   .section-container .section-img-right {
-    margin-left: 220px; }
+    transform: rotate(0);
+    margin-right: auto;
+    margin-left: auto; }
+  .section-container .img-container {
+    margin-top: 40px; }
+  .section-container img {
+    width: 75vw;
+    height: 75vw; }
+  .section-container .section-img-right {
+    margin-left: 0px; }
   .dropdown .dropdown-menu a.nav-link {
     text-align: center;
     padding: 8px 0;

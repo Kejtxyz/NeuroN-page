@@ -1,9 +1,4 @@
 (function($) {
-    const SCROLL_DIRECTION_DOWN     = 'down';
-    const SCROLL_DIRECTION_UP       = 'up';
-
-    var previousScrollDirection     = null;
-
     var previousScrollTop = $(window).scrollTop();
 
     var onScrollDown = function(e) {
@@ -20,30 +15,21 @@
 
     var onScroll = function(e) {
         var currentScrollTop = $(this).scrollTop();
-        var scrollDirection = (previousScrollTop > currentScrollTop) ? SCROLL_DIRECTION_UP : SCROLL_DIRECTION_DOWN;
 
-        if(scrollDirection === previousScrollDirection) {
-            return;
-        }
-
-        if ($(document).width() > 540) {
+        if ($(settings.nav).width() > 540) {
             if (currentScrollTop <= 75) {
                 $(settings.nav).css('animation-duration', '0s');
             } else {
                 $(settings.nav).css('animation-duration', '1s');
             }
-        }
 
-        if (scrollDirection === SCROLL_DIRECTION_UP) {
-            console.log('doin scroll up');
-            onScrollUp(e);
+            if (previousScrollTop > currentScrollTop) {
+                onScrollUp(e);
+            } else {
+                onScrollDown(e);
+            }
+            previousScrollTop = currentScrollTop;
         }
-        if (scrollDirection === SCROLL_DIRECTION_DOWN){
-            onScrollDown(e);
-        }
-
-        previousScrollTop       = currentScrollTop;
-        previousScrollDirection = scrollDirection;
     };
 
     var defaults = {

@@ -77,10 +77,6 @@
         };
 
         var onScroll = function(e) {
-            if($(window).width() <= settings.minimalWindowWidthPx) {
-                return;
-            }
-
             var currentScrollTop = $(this).scrollTop();
 
             if (previousScrollTop > currentScrollTop) {
@@ -128,12 +124,11 @@
     };
 
     var defaults = {
-        $element:               null,
-        rotationDegrees:        1,
-        rotationDurationMs:     1,
-        maxRotationDegrees:     10,
-        direction:              'auto',
-        minimalWindowWidthPx:   540
+        $element:           null,
+        rotationDegrees:    1,
+        rotationDurationMs: 1,
+        maxRotationDegrees: 10,
+        direction:          'auto'
     };
 
     var validate = function(config) {
