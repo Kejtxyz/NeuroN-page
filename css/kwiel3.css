@@ -1,0 +1,51 @@
+.powiekszenie {
+    border-radius: 25px 25px 0px 0px;
+    overflow: hidden;
+    margin-top: 6px;
+    /* padding: 0;
+    border: 0px solid #000;
+    border: 0px none; */
+}
+.powiekszenie img {
+    transition-duration: 1s;
+    margin: 0 auto;
+    display: block;
+	
+}
+.powiekszenie img:hover {
+    filter: brightness(60%);
+	
+	transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform:  scale(1.2);
+    z-index: 0;
+}
+
+.container-fluid {
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.card-body {
+    padding: 0px;
+}
+
+.card {
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(214, 197, 246, 0.50);
+}
+
+.card-title {
+    margin-bottom: 8px;
+    margin-top:  8px;
+}
+
+.powiekszenie .img-fluid {
+    margin-bottom: 0px;
+}
+
+.p-2 {
+    margin-bottom: 4px;
+}
+
