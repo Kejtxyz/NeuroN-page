@@ -91,17 +91,37 @@
         if(!isInvisible) {
             $searchInput.removeClass("stretch");
             $searchInput.addClass("squash");
-            setTimeout(function() {
+            return setTimeout(function() {
                 $searchInput.addClass("d-none");
             }, 1000);
         }
+
+        return null;
     };
 
     var onCloseIconClick = function() {
-        hideSearchbar();
-        showSearchButton();
-        hideCloseIcon();
-        showPrimaryMenu();
+        if(hideSearchbar() !== null) {
+            showSearchButton();
+            hideCloseIcon();
+            showPrimaryMenu();
+        }
+    };
+
+    var onAnyClick = function(e) {
+        var currentElement = $(e.target)[0];
+
+        var keepOpenList = [
+            $(settings.closeIconSelector)[0],
+            settings.element[0]
+        ];
+
+        for(var i=0; i < keepOpenList; i++) {
+            if(currentElement === keepOpenList[i]) {
+                return;
+            }
+        }
+
+        onCloseIconClick();
     };
 
     $.fn.magicSearch = function(options) {
@@ -119,5 +139,7 @@
         if(typeof settings.closeIconSelector !== "undefined" && settings.closeIconSelector !== null) {
             $(document).on('click', settings.closeIconSelector, onCloseIconClick);
         }
+
+        $(document).on('click', onAnyClick);
     };
 }(jQuery));

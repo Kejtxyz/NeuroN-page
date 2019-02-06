@@ -64,3 +64,7 @@
     top: 14px;
     right: 12px;
 }
+
+#nav2 span.navbar-toggler {
+    background-color: black;
+}
