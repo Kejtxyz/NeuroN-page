@@ -8,9 +8,9 @@ $(document).magicArrow({
 });
 
 $('#magicSearch').magicSearch({
-    primaryMenuSelector:        '#right-itemlist',
+    primaryMenuSelector:        '#collapsibleNavbar',
     hideableElementsSelector:   '.hide-when-search',
-    closeIconSelector:          '.input-close-icon',
+    searchInputWrapperSelector: '#searchInputListElement',
     searchButtonSelector:       '#magicSearchWrapper'   // Used to hide search button
 });
 

@@ -72,33 +72,56 @@
 
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="nav navbar-nav ml-auto w-80 justify-content-center">
-                    <li class="nav-item nav-link-style">
-                        <a class="nav-link margin-top-style" href="#">Sklep<em class="px-2 icon-basket to-hide"></em></a>
-                    </li>
-                    <li class="nav-item nav-link-style">
-                        <a class="nav-link margin-top-style" href="#">Pobierz<em class="px-2 icon-download to-hide"></em></a>
-                    </li>
-                    <li class="nav-item nav-link-style">
-                        <a class="nav-link margin-top-style" href="#">Wydarzenia<em class="px-2 icon-calendar to-hide"></em></a>
-                    </li>
                     <li class="nav-item nav-link-style hide-when-search" id="magicSearchWrapper">
                         <a class="nav-link margin-top-style" href="#" id="magicSearch">Szukaj <em class="px-2 icon-search to-hide"></em></a>
                     </li>
+
+                    <li class="nav-item" id="searchInputListElement">
+                        <input
+                                type="text"
+                                name="search"
+                                autofocus
+                                class="search-input d-none"
+                                placeholder="Szukaj w Smart Oak Project"
+                                style="border: none"
+                        />
+                    </li>
+
+                    <!-- Desktop, see that hide-when-search IS PRESENT there -->
+                    <!-- We DO hide these positions on desktop -->
+                    <li class="nav-item nav-link-style hide-when-search d-none d-sm-block">
+                        <a class="nav-link margin-top-style" href="#">Sklep<em class="px-2 icon-basket to-hide"></em></a>
+                    </li>
+                    <li class="nav-item nav-link-style hide-when-search d-none d-sm-block">
+                        <a class="nav-link margin-top-style" href="#">Pobierz<em class="px-2 icon-download to-hide"></em></a>
+                    </li>
+                    <li class="nav-item nav-link-style hide-when-search d-none d-sm-block">
+                        <a class="nav-link margin-top-style" href="#">Wydarzenia<em class="px-2 icon-calendar to-hide"></em></a>
+                    </li>
+
+                    <!-- Mobile, see that hide-when-search IS NOT PRESENT there -->
+                    <!-- We DO NOT hide these positions on mobile -->
+                    <li class="nav-item nav-link-style d-sm-none">
+                        <a class="nav-link margin-top-style" href="#">Sklep<em class="px-2 icon-basket to-hide"></em></a>
+                    </li>
+                    <li class="nav-item nav-link-style d-sm-none">
+                        <a class="nav-link margin-top-style" href="#">Pobierz<em class="px-2 icon-download to-hide"></em></a>
+                    </li>
+                    <li class="nav-item nav-link-style d-sm-none">
+                        <a class="nav-link margin-top-style" href="#">Wydarzenia<em class="px-2 icon-calendar to-hide"></em></a>
+                    </li>
                 </ul>
-                <ul
-                    class="nav navbar-nav ml-auto justify-content-end"
-                    id="right-itemlist"
-                >
-                    <li class="nav-item hide-when-search">
+                <ul class="nav navbar-nav ml-auto justify-content-end" id="right-itemlist">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">O projekcie</a>
                     </li>
-                    <li class="nav-item hide-when-search">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Kontakt</a>
                     </li>
-                    <li class="nav-item hide-when-search">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Zaloguj</a>
                     </li>
-                    <li class="nav-item dropdown hide-when-search">
+                    <li class="nav-item dropdown">
                         <a
                             class="nav-link"
                             data-toggle="dropdown"
@@ -122,22 +145,6 @@
                             <li><a class="nav-link" href="#">ZH</a></li>
                             <li><a class="nav-link" href="#">JA</a></li>
                         </ul>
-                    </li>
-                    <li
-                        class="nav-item"
-                        style="position:absolute; width: 550px; right: 40px; top: 10px; z-index: 10000;"
-                    >
-                        <input
-                            type="text"
-                            name="search"
-                            autofocus
-                            class="search-input d-none"
-                            placeholder="Szukaj w Smart Oak Project"
-                            style="border: none"
-                        />
-                    </li>
-                    <li class="nav-item margin-top-style input-close-icon">
-                        <em class="icon-cancel"></em>
                     </li>
                 </ul>
             </div>

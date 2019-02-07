@@ -11,10 +11,6 @@
 .section-container .section-img-right {
     transform: rotate(0deg);
 }
-
-.input-close-icon {
-    display: none;
-}
   
 .main-nav1 {
     overflow-y: inherit; /* default value */
@@ -24,14 +20,6 @@
     z-index: 1050;
 }
 
-.input-close-icon em {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    color: white;
-    font-size: 2em;
-}
-
 #nav2 span.navbar-toggler {
     background-color: black;
 }
@@ -39,4 +27,45 @@
 #scroll-button em {
     color: #2a80f8;
     font-size: 12px;
+}
+
+nav.main-nav1 {
+    min-height: 55px;
+}
+
+#searchInputListElement {
+    display: none;
+}
+
+#searchInputListElement input {
+    margin-bottom: 6px;
+}
+
+
+#magicSearchWrapper, #searchInputListElement {
+    height: 40px;
+}
+
+@media (min-width: 576px) {
+    #searchInputListElement {
+        width: 500px;
+    }
+}
+
+@media (min-width: 768px) {
+    #searchInputListElement {
+        width: 670px;
+    }
+}
+
+@media (min-width: 992px) {
+    #searchInputListElement {
+        width: 500px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #searchInputListElement {
+        width: 500px;
+    }
 }
