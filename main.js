@@ -8,10 +8,15 @@ $(document).magicArrow({
 });
 
 $('#magicSearch').magicSearch({
-    primaryMenuSelector:        '#collapsibleNavbar',
-    hideableElementsSelector:   '.hide-when-search',
-    searchInputWrapperSelector: '#searchInputListElement',
-    searchButtonSelector:       '#magicSearchWrapper'   // Used to hide search button
+    primaryMenuSelector:                    '#collapsibleNavbar',
+    hideableElementsSelector:               '.hide-when-search',
+    searchInputWrapperSelector:             '#searchInputListElement',
+    searchButtonSelector:                   '#magicSearchWrapper',   // Used to hide search button
+    additionalNoHideIdSelectors:         [
+        '#left-toggler',
+        '#right-toggler',
+        '#magic-search'
+    ]
 });
 
 $(window).magicNav({

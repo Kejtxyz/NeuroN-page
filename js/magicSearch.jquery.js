@@ -8,6 +8,8 @@
         searchButtonSelector: null,
         hideableElementsSelector: null,
         searchInputWrapperSelector: null,
+        showSearchbarWithoutAnimationSelector: null,
+        additionalNoHideIdSelectors: [],
         hideAnimation: 'zoomOut',
         showAnimation: 'zoomIn',
         searchInputSelector: 'input[name="search"]',
@@ -89,6 +91,17 @@
         $searchInput.addClass("animated slow stretch");
     };
 
+    var showSearchbarWithoutAnimation = function() {
+        var $searchInputWrapper     = $(settings.searchInputWrapperSelector);
+        $searchInputWrapper.css('display', 'block');
+        $searchInputWrapper.find('input').removeClass('d-none');
+    };
+
+    var isSearchBarVisible = function() {
+        var $searchInput            = $(settings.searchInputSelector);
+        return $searchInput.is(":visible");
+    };
+
     var hideSearchbar = function(callback) {
         var $searchInputWrapper     = $(settings.searchInputWrapperSelector);
         var $searchInput            = $(settings.searchInputSelector);
@@ -107,10 +120,23 @@
     };
 
     var onAnyClick = function(e) {
+        if(!isSearchBarVisible()) {
+            return;
+        }
+
         var $currentElement = $(e.target);
 
         if($currentElement.parent()[0] === $(settings.searchInputWrapperSelector)[0]) {
             return;
+        }
+
+        var clickedId = $currentElement.attr('id') || $currentElement.parent().attr('id');
+        clickedId = '#' + clickedId;
+
+        for(var i=0; i<settings.additionalNoHideIdSelectors.length; i++) {
+            if(clickedId === settings.additionalNoHideIdSelectors[i]) {
+                return;
+            }
         }
 
         hideSearchbar(function() {

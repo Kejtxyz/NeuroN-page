@@ -33,10 +33,6 @@ nav.main-nav1 {
     min-height: 55px;
 }
 
-#searchInputListElement {
-    display: none;
-}
-
 #searchInputListElement input {
     margin-bottom: 6px;
 }
@@ -48,6 +44,7 @@ nav.main-nav1 {
 
 @media (min-width: 576px) {
     #searchInputListElement {
+        display: none;
         width: 500px;
     }
 }
@@ -68,4 +65,47 @@ nav.main-nav1 {
     #searchInputListElement {
         width: 500px;
     }
+}
+
+.collapsing {
+    -webkit-transition: height 0.8s ease;
+    -o-transition: height 0.8s ease;
+    transition: height 0.8s ease;
+}
+
+body.noscroll {
+    overflow: hidden !important;
+    height: 100% !important;
+}
+
+.bg-layer-grey {
+    position: absolute;
+    background-color: #0e0e0e;
+    height: 100vh;
+    width: 100%;
+    z-index:-2;
+}
+
+.bg-layer-white {
+    position: absolute;
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    z-index:-1;
+}
+
+.main-nav1 {
+    z-index: 10005;
+}
+
+#nav2 {
+    z-index: 10005;
+}
+
+#middle-toggler-icon {
+    border: none;
+}
+
+#middle-toggler-icon > img {
+    max-height: 48px;
 }

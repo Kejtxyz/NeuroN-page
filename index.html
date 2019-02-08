@@ -32,9 +32,31 @@
         <link rel="stylesheet" href="css/protean.css" />
     </head>
     <body>
+        <!-- Change z-index of this layer when opening collapsible menu so the height of collapsed content won't be hacked -->
+        <!-- By default its not visible as its z-index is lower than anything else -->
+        <div id="grey-layer" class="bg-layer-grey"></div>
+        <div id="white-layer" class="bg-layer-white"></div>
+
         <nav
-            class="navbar navbar-expand-lg justify-content-center navbar-dark main-nav1"
+            class="navbar navbar-expand-lg navbar-dark main-nav1"
         >
+            <button id="left-toggler"
+                    class="navbar-toggler"
+                    type="button"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <span class="navbar-toggler d-sm-none" id="middle-toggler-icon">
+                <img src="img/logo-biale.png" alt="Logo białe" />
+            </span>
+            <button
+                    id="right-toggler"
+                    class="navbar-toggler"
+                    type="button"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
             <ul class="nav navbar-nav to-hide">
                 <li>
                     <a class="nav-link" href="#"><em class="icon-rss"></em></a>
@@ -61,18 +83,9 @@
                 </li>
             </ul>
 
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapsibleNavbar"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="nav navbar-nav ml-auto w-80 justify-content-center">
-                    <li class="nav-item nav-link-style hide-when-search" id="magicSearchWrapper">
+                    <li class="nav-item nav-link-style hide-when-search d-none d-sm-block" id="magicSearchWrapper">
                         <a class="nav-link margin-top-style" href="#" id="magicSearch">Szukaj <em class="px-2 icon-search to-hide"></em></a>
                     </li>
 
@@ -81,7 +94,7 @@
                                 type="text"
                                 name="search"
                                 autofocus
-                                class="search-input d-none"
+                                class="search-input"
                                 placeholder="Szukaj w Smart Oak Project"
                                 style="border: none"
                         />
@@ -161,18 +174,14 @@
             class="navbar navbar-expand-sm navbar-dark justify-content-center sticky-top"
             id="nav2"
         >
-            <h5
-                class="navbar-toggler text-white"
-                data-toggle="collapse"
-                data-target="#collapsibleNavbar2"
-            >
-                NASZE PROJEKTY
-            </h5>
             <div
                 class="collapse navbar-collapse justify-content-center"
                 id="collapsibleNavbar2"
             >
                 <ul class="navbar-nav text-center">
+                    <li class="nav-item border-style">
+                        <h5 class="text-white">NASZE PROJEKTY</h5>
+                    </li>
                     <li class="nav-item border-style">
                         <a class="nav-link nav2-link-style" href="#"
                             >NeuroN Foundation</a
@@ -573,6 +582,7 @@
         </div>
 
         <script src="vendor/jquery-3.3.1/jquery-3.3.1.js"></script>
+        <script src="js/jqueryBugfix.js"></script>
         <script src="vendor/popper.js-1.14.6/umd/popper.js"></script>
         <script src="vendor/bootstrap-4.2.1/js/bootstrap.bundle.js"></script>
         <script src="js/magicArrow.jquery.js"></script>
