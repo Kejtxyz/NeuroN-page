@@ -23,6 +23,10 @@
         <link rel="stylesheet" href="css/protean.css" />
     </head>
     <body>
+    <!-- Change z-index of this layer when opening collapsible menu so the height of collapsed content won't be hacked -->
+    <!-- By default its not visible as its z-index is lower than anything else -->
+    <div id="grey-layer" class="bg-layer-grey"></div>
+    <div id="white-layer" class="bg-layer-white"></div>
 
     <nav class="navbar navbar-expand-lg navbar-dark main-nav1">
         <button id="left-toggler" class="navbar-toggler" type="button">
@@ -121,6 +125,9 @@
         </div>
     </nav>
 
+    <!-- background navigacji 2 -->
+    <div class="position-absolute w-100" style="height: 120px; background-color: #151515;"></div>
+
     <!-- navigacja 2 -->
     <nav class="navbar navbar-expand-sm navbar-dark justify-content-center sticky-top" id="nav2">
         <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar2">
@@ -150,7 +157,7 @@
                     <a class="nav-link nav2-link-style" href="#">Oak Atlantis</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav2-link-style" href="#">O nas</a>
+                    <a class="nav-link nav2-link-style" href="about.html">O nas</a>
                 </li>
             </ul>
         </div>
@@ -167,6 +174,8 @@
                     reprehenderit corporis architecto in atque, cupiditate
                     asperiores error nesciunt.
                 </p>
+                <a href="https://www.facebook.com/neuronfoundation/"><em class="header-icon icon-facebook"></em></a>
+                <a href="#news-section"><em class="header-icon icon-doc"></em></a>
             </div>
         </div>
         <div id="left-corner" style="transform-origin: bottom right; float: left; display: inline-block; width:25%; height:100%;" class="tr">

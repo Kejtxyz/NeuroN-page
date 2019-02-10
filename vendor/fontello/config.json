@@ -83,6 +83,18 @@
       "css": "cancel",
       "code": 59397,
       "src": "entypo"
+    },
+    {
+      "uid": "1e89103762be72b0720eda0468e62b90",
+      "css": "globe",
+      "code": 59398,
+      "src": "linecons"
+    },
+    {
+      "uid": "f978da58836f23373882916f05fb70b4",
+      "css": "doc",
+      "code": 59399,
+      "src": "linecons"
     }
   ]
 }
