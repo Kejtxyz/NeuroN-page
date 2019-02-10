@@ -103,3 +103,23 @@ body.noscroll {
 #middle-toggler-icon > img {
     max-height: 48px;
 }
+
+.tr {
+    -webkit-transition: transform 0.2s ease-in-out;
+    -moz-transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+}
+
+#main-header .header-caption {
+    -webkit-transition: transform 0.5s ease-out;
+
+    padding-left: 0px;
+    position: absolute;
+    left: 100px;
+    top: 80px;
+}
+
+#main-header .header-caption img {
+    height: 130px;
+    margin-top: 0px;
+}
