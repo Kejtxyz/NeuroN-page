@@ -23,10 +23,6 @@ $(window).magicNav({
     navSelector: '#nav2'
 });
 
-$(document).magicLine({
-    elementSelector:    '#main-header'
-});
-
 var rotatorConfig = {
     rotationDegrees: 1,
     rotationDurationMs: 300

@@ -92,12 +92,12 @@ img#logo-main-nav {
     color: #dadada; }
 
 #main-header {
-  background-image: linear-gradient(to right bottom, rgba(14, 25, 110, 0.4), rgba(42, 128, 248, 0.4)), url(../img/header-foto.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 84.5vh;
-  color: white;
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 25% 100%, 0 70%); }
+    background-image: linear-gradient(to right bottom, rgba(14, 25, 110, 0.4), rgba(42, 128, 248, 0.4)), url(../img/header-foto.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 84.5vh;
+    color: white;
+}
   #main-header .header-caption {
     padding-left: 100px;
     position: fixed; }
