@@ -100,14 +100,14 @@ body {
     color: $primary-light-color;
 }
 
-.navbar-expand-sm .navbar-nav .nav2-link-style {
+.navbar-expand-lg .navbar-nav .nav2-link-style {
     padding-right: 1.25rem !important;
     padding-left: 1.25rem !important;
     padding-bottom: 1rem;
     color: #dedede;
     border-bottom: solid 2px $secondary-dark-color;
 
-    &:hover {
+    &:hover { 
         border-bottom: solid 2px $logo-light-color;
     }
 }
@@ -189,7 +189,7 @@ img#logo-main-nav {
 
         img {
             height: 130px;
-            margin: 75px 0 20px 0;
+            margin: 40px 0 20px 0;
         }
 
         .header-text-container {
@@ -198,6 +198,12 @@ img#logo-main-nav {
             h1 {
                 font-size: 3.5em;
                 margin-bottom: 25px;
+            }
+
+            .header-icon {
+                color: white;
+                padding: 2px;
+                font-size: 16px;
             }
         }
     }
@@ -308,12 +314,64 @@ div#copyright {
     }
 }
 
+.team-container {
+    padding: 103px 40px 0 40px;
+    // padding-right: 40px;
+    overflow-x: hidden;
+
+    .team {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        font-weight: bold;
+        margin: 0 auto;
+        }
+
+    .round-container {
+        width: 100%;
+        margin: 0 auto;
+
+        .container-foto-team {
+            width: 120px;
+            height: 120px;
+            border-radius: 100%;
+            background-position: center;
+            background-size: cover;
+            margin: 0 auto;	
+            padding-bottom: 30px;
+        }
+
+        .img-team1 {
+            background-image: url(../img/lukas.jpg);
+        }
+
+    }
+
+        .text-team-content {
+            margin-bottom: 60px;
+
+            .title-foto {
+                font-weight: bold;
+                font-size: 1em;
+                text-align: center;
+                padding-top: 20px;
+            }
+            
+            .text-foto {
+                font-size: 1em;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+
+        }
+}
+
+
 @media all and (max-width: 992px) {
     .to-hide {
         display: none;
     }
 
-    
+
     .search-input {
         width: 100%;
         border-radius: 0;
@@ -333,6 +391,13 @@ div#copyright {
         &:hover {
             background-color: $secondary-dark-color;
         }
+    }
+
+    .team-container {
+        padding-left: 0;
+        padding-right: 0;
+        overflow-x: hidden;
+
     }
 
     .section-container {

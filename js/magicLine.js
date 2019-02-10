@@ -32,6 +32,6 @@ document.addEventListener('scroll', function() {
     var percent         = getAnimationPercent(document.documentElement.scrollTop, max);
     var scrollPercent   = parseInt(percent*100);
 
-    requestLeftAnimation(leftPolygon, [0,100, 0,scrollPercent+50, 100,100], [0,100, 0,scrollPercent, 100,100]);
-    requestLeftAnimation(rightPolygon, [100, 100, 100, scrollPercent+30, 0, 100], [100, 100, 100, scrollPercent+30, 0, 100]);
+    requestLeftAnimation(leftPolygon, [0,100, 0,scrollPercent+70, 100,100], [0,100, 0,scrollPercent, 100,100]);
+    requestLeftAnimation(rightPolygon, [100, 100, 100, scrollPercent+50, 0, 100], [100, 100, 100, scrollPercent+30, 0, 100]);
 });

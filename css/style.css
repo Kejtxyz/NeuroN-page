@@ -45,13 +45,13 @@ body {
   font-size: 20px;
   color: #dadada; }
 
-.navbar-expand-sm .navbar-nav .nav2-link-style {
+.navbar-expand-lg .navbar-nav .nav2-link-style {
   padding-right: 1.25rem !important;
   padding-left: 1.25rem !important;
   padding-bottom: 1rem;
   color: #dedede;
   border-bottom: solid 2px #151515; }
-  .navbar-expand-sm .navbar-nav .nav2-link-style:hover {
+  .navbar-expand-lg .navbar-nav .nav2-link-style:hover {
     border-bottom: solid 2px #2a80f8; }
 
 img#logo-main-nav {
@@ -103,12 +103,16 @@ img#logo-main-nav {
     position: fixed; }
     #main-header .header-caption img {
       height: 130px;
-      margin: 75px 0 20px 0; }
+      margin: 40px 0 20px 0; }
     #main-header .header-caption .header-text-container {
       width: 50%; }
       #main-header .header-caption .header-text-container h1 {
         font-size: 3.5em;
         margin-bottom: 25px; }
+      #main-header .header-caption .header-text-container .header-icon {
+        color: white;
+        padding: 2px;
+        font-size: 16px; }
 
 .section-container {
   padding-top: 50px;
@@ -177,6 +181,39 @@ div#copyright {
     color: #2a80f8;
     font-size: 12px; }
 
+.team-container {
+  padding: 103px 40px 0 40px;
+  overflow-x: hidden; }
+  .team-container .team {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-weight: bold;
+    margin: 0 auto; }
+  .team-container .round-container {
+    width: 100%;
+    margin: 0 auto; }
+    .team-container .round-container .container-foto-team {
+      width: 120px;
+      height: 120px;
+      border-radius: 100%;
+      background-position: center;
+      background-size: cover;
+      margin: 0 auto;
+      padding-bottom: 30px; }
+    .team-container .round-container .img-team1 {
+      background-image: url(../img/lukas.jpg); }
+  .team-container .text-team-content {
+    margin-bottom: 60px; }
+    .team-container .text-team-content .title-foto {
+      font-weight: bold;
+      font-size: 1em;
+      text-align: center;
+      padding-top: 20px; }
+    .team-container .text-team-content .text-foto {
+      font-size: 1em;
+      text-align: center;
+      margin-bottom: 5px; }
+
 @media all and (max-width: 992px) {
   .to-hide {
     display: none; }
@@ -194,6 +231,10 @@ div#copyright {
     margin: 0; }
     .navbar-dark .navbar-nav .nav-link:hover {
       background-color: #151515; }
+  .team-container {
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden; }
   .section-container .article-text {
     padding: 0 40px;
     margin-top: 30px;

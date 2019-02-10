@@ -77,7 +77,7 @@ body.noscroll {
     background-color: #0e0e0e;
     height: 100vh;
     width: 100%;
-    z-index:-2;
+    z-index:-2000;
 }
 
 .bg-layer-white {
@@ -85,7 +85,7 @@ body.noscroll {
     background-color: white;
     height: 100vh;
     width: 100%;
-    z-index:-1;
+    z-index:-1000;
 }
 
 .main-nav1 {
@@ -122,4 +122,32 @@ body.noscroll {
 #main-header .header-caption img {
     height: 130px;
     margin-top: 0px;
+}
+
+/* <div class="position-absolute w-100 d-sm-none" style=""></div> */
+div#nav-background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: #151515;
+    height: 72px;
+}
+
+
+#nav2 {
+    padding-bottom: 8px;
+}
+
+@media (min-width: 1200px) {
+    div#nav-background {
+        height: 108px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #nav2 {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
 }
