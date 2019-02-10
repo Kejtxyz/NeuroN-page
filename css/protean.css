@@ -20,6 +20,17 @@
     z-index: 1050;
 }
 
+<<<<<<< HEAD
+.input-close-icon em {
+    position: absolute;
+    top: 15px;
+    right: 8px;
+    color: white;
+    font-size: 1.4em;
+}
+
+=======
+>>>>>>> 3e831ccbca99e6874b0e8e1d5c2126baa61b6f87
 #nav2 span.navbar-toggler {
     background-color: black;
 }
