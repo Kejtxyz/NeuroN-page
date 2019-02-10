@@ -381,6 +381,7 @@ div#copyright {
     }
     .navbar-collapse {
         margin-left: 20px;
+        margin-right: 20px;
     }
 
     .navbar-dark .navbar-nav .nav-link {
@@ -391,6 +392,18 @@ div#copyright {
         &:hover {
             background-color: $secondary-dark-color;
         }
+    }
+
+    #nav2 {
+        background-color: $primary-dark-color;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 0;
+
+        a {
+        text-align: end;
+        }
+       
     }
 
     .team-container {

@@ -224,21 +224,13 @@ div#copyright {
     margin-top: 15px;
     height: 35px; }
   .navbar-collapse {
-    margin-left: 20px;
-    margin-right: 20px; }
+    margin-left: 20px; }
   .navbar-dark .navbar-nav .nav-link {
     border-bottom: 1px solid #393939;
     padding: 12px;
     margin: 0; }
     .navbar-dark .navbar-nav .nav-link:hover {
       background-color: #151515; }
-  #nav2 {
-    background-color: #0e0e0e;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 0; }
-    #nav2 a {
-      text-align: end; }
   .team-container {
     padding-left: 0;
     padding-right: 0;
@@ -295,3 +287,5 @@ div#copyright {
     text-align: center;
     padding: 8px 0;
     border-top: 1px solid rgba(119, 119, 119, 0.5); } }
+
+/*# sourceMappingURL=main.css.map */
