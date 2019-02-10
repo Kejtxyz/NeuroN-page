@@ -146,3 +146,7 @@ div#nav-background {
         padding-bottom: 0px;
     }
 }
+
+.link-active {
+    border-bottom: solid 2px #2a80f8 !important;
+}
