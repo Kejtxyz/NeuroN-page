@@ -4,11 +4,15 @@
   "description": "Landing Page fo NeuroN Foundation",
   "main": "main.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "compile:sass": "node-sass --watch --recursive --output css --source-map true --source-map-contents sass"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^4.11.0"
+  },
+  "dependencies": {
+    "compass": "^0.1.1",
+    "compass-mixins": "^0.12.10"
   }
 }
