@@ -32,9 +32,31 @@
         <link rel="stylesheet" href="css/protean.css" />
     </head>
     <body>
+        <!-- Change z-index of this layer when opening collapsible menu so the height of collapsed content won't be hacked -->
+        <!-- By default its not visible as its z-index is lower than anything else -->
+        <div id="grey-layer" class="bg-layer-grey"></div>
+        <div id="white-layer" class="bg-layer-white"></div>
+
         <nav
-            class="navbar navbar-expand-lg justify-content-center navbar-dark main-nav1"
+            class="navbar navbar-expand-lg navbar-dark main-nav1"
         >
+            <button id="left-toggler"
+                    class="navbar-toggler"
+                    type="button"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <span class="navbar-toggler d-sm-none" id="middle-toggler-icon">
+                <img src="img/logo-biale.png" alt="Logo białe" />
+            </span>
+            <button
+                    id="right-toggler"
+                    class="navbar-toggler"
+                    type="button"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
             <ul class="nav navbar-nav to-hide">
                 <li>
                     <a class="nav-link" href="#"><em class="icon-rss"></em></a>
@@ -61,44 +83,58 @@
                 </li>
             </ul>
 
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapsibleNavbar"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="nav navbar-nav ml-auto w-80 justify-content-center">
-                    <li class="nav-item nav-link-style">
-                        <a class="nav-link margin-top-style" href="#">Sklep<em class="px-2 icon-basket to-hide"></em></a>
-                    </li>
-                    <li class="nav-item nav-link-style">
-                        <a class="nav-link margin-top-style" href="#">Pobierz<em class="px-2 icon-download to-hide"></em></a>
-                    </li>
-                    <li class="nav-item nav-link-style">
-                        <a class="nav-link margin-top-style" href="#">Wydarzenia<em class="px-2 icon-calendar to-hide"></em></a>
-                    </li>
-                    <li class="nav-item nav-link-style hide-when-search" id="magicSearchWrapper">
+                    <li class="nav-item nav-link-style hide-when-search d-none d-sm-block" id="magicSearchWrapper">
                         <a class="nav-link margin-top-style" href="#" id="magicSearch">Szukaj <em class="px-2 icon-search to-hide"></em></a>
                     </li>
+
+                    <li class="nav-item" id="searchInputListElement">
+                        <input
+                                type="text"
+                                name="search"
+                                autofocus
+                                class="search-input"
+                                placeholder="Szukaj w Smart Oak Project"
+                                style="border: none"
+                        />
+                    </li>
+
+                    <!-- Desktop, see that hide-when-search IS PRESENT there -->
+                    <!-- We DO hide these positions on desktop -->
+                    <li class="nav-item nav-link-style hide-when-search d-none d-sm-block">
+                        <a class="nav-link margin-top-style" href="#">Sklep<em class="px-2 icon-basket to-hide"></em></a>
+                    </li>
+                    <li class="nav-item nav-link-style hide-when-search d-none d-sm-block">
+                        <a class="nav-link margin-top-style" href="#">Pobierz<em class="px-2 icon-download to-hide"></em></a>
+                    </li>
+                    <li class="nav-item nav-link-style hide-when-search d-none d-sm-block">
+                        <a class="nav-link margin-top-style" href="#">Wydarzenia<em class="px-2 icon-calendar to-hide"></em></a>
+                    </li>
+
+                    <!-- Mobile, see that hide-when-search IS NOT PRESENT there -->
+                    <!-- We DO NOT hide these positions on mobile -->
+                    <li class="nav-item nav-link-style d-sm-none">
+                        <a class="nav-link margin-top-style" href="#">Sklep<em class="px-2 icon-basket to-hide"></em></a>
+                    </li>
+                    <li class="nav-item nav-link-style d-sm-none">
+                        <a class="nav-link margin-top-style" href="#">Pobierz<em class="px-2 icon-download to-hide"></em></a>
+                    </li>
+                    <li class="nav-item nav-link-style d-sm-none">
+                        <a class="nav-link margin-top-style" href="#">Wydarzenia<em class="px-2 icon-calendar to-hide"></em></a>
+                    </li>
                 </ul>
-                <ul
-                    class="nav navbar-nav ml-auto justify-content-end"
-                    id="right-itemlist"
-                >
-                    <li class="nav-item hide-when-search">
+                <ul class="nav navbar-nav ml-auto justify-content-end" id="right-itemlist">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">O projekcie</a>
                     </li>
-                    <li class="nav-item hide-when-search">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Kontakt</a>
                     </li>
-                    <li class="nav-item hide-when-search">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Zaloguj</a>
                     </li>
-                    <li class="nav-item dropdown hide-when-search">
+                    <li class="nav-item dropdown">
                         <a
                             class="nav-link"
                             data-toggle="dropdown"
@@ -123,22 +159,6 @@
                             <li><a class="nav-link" href="#">JA</a></li>
                         </ul>
                     </li>
-                    <li
-                        class="nav-item"
-                        style="position:absolute; width: 550px; right: 40px; top: 10px; z-index: 10000;"
-                    >
-                        <input
-                            type="text"
-                            name="search"
-                            autofocus
-                            class="search-input d-none"
-                            placeholder="Szukaj w Smart Oak Project"
-                            style="border: none"
-                        />
-                    </li>
-                    <li class="nav-item margin-top-style input-close-icon">
-                        <em class="icon-cancel"></em>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -154,18 +174,14 @@
             class="navbar navbar-expand-sm navbar-dark justify-content-center sticky-top"
             id="nav2"
         >
-            <h5
-                class="navbar-toggler text-white"
-                data-toggle="collapse"
-                data-target="#collapsibleNavbar2"
-            >
-                NASZE PROJEKTY
-            </h5>
             <div
                 class="collapse navbar-collapse justify-content-center"
                 id="collapsibleNavbar2"
             >
                 <ul class="navbar-nav text-center">
+                    <li class="nav-item border-style d-sm-none">
+                        <h5 class="text-white">NASZE PROJEKTY</h5>
+                    </li>
                     <li class="nav-item border-style">
                         <a class="nav-link nav2-link-style" href="#"
                             >NeuroN Foundation</a
@@ -479,12 +495,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="p-3 d-block text-dark" href="#"
-                                >Kontakt</a
+                                >O Projekcie</a
                             >
                         </li>
                         <li class="nav-item">
                             <a class="p-3 d-block text-dark" href="#"
-                                >O Projekcie</a
+                                >Kontakt</a
                             >
                         </li>
                     </ul>
@@ -551,7 +567,7 @@
                     >
                         <a class="text-dark" href="#">Terms and conditions</a>
                         <p class="mb-0 small text-muted">
-                            &copy; 2019 Neuron Fundation. All right reserved.
+                            &copy; 2019 Smart Oak Project. All right reserved.
                         </p>
                     </div>
                 </div>
@@ -568,6 +584,7 @@
         </div>
 
         <script src="vendor/jquery-3.3.1/jquery-3.3.1.js"></script>
+        <script src="js/jqueryBugfix.js"></script>
         <script src="vendor/popper.js-1.14.6/umd/popper.js"></script>
         <script src="vendor/bootstrap-4.2.1/js/bootstrap.bundle.js"></script>
         <script src="js/magicArrow.jquery.js"></script>
