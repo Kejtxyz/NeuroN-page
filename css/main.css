@@ -98,8 +98,7 @@ img#logo-main-nav {
   background-size: cover;
   background-position: center;
   height: 84.5vh;
-  color: white;
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 25% 100%, 0 70%); }
+  color: white; }
   #main-header .header-caption {
     padding-left: 100px;
     position: fixed; }
