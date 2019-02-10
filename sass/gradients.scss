@@ -1,0 +1,57 @@
+@import "../node_modules/compass-mixins/lib/compass";
+
+// http://colorzilla.com/gradient-editor/#a90329+0,8f0222+44,6d0019+100;Brown+Red+3D
+.gradient-1 {
+  background-color: rgb(169,3,41); // Old browsers
+  @include filter-gradient(#a90329, #6d0019, vertical); // IE6-9
+  @include background-image(linear-gradient(top, rgba(169,3,41, 0.2) 0%,rgba(143,2,34, 0.4) 50%,rgba(109,0,25, 0.6) 100%), url(../img/header-foto.jpg));
+}
+
+// http://colorzilla.com/gradient-editor/#e4f5fc+0,bfe8f9+50,9fd8ef+51,2ab0ed+100;Blue+Gloss+%235
+.gradient-2 {
+  background-color: rgb(228,245,252); // Old browsers
+  @include filter-gradient(#e4f5fc, #2ab0ed, vertical); // IE6-9
+  @include background-image(linear-gradient(top, rgba(228,245,252,0.2) 0%,rgba(191,232,249,0.4) 50%,rgba(159,216,239,0.6) 51%,rgba(42,176,237,0.8) 100%), url(../img/header-foto.jpg));
+}
+
+// http://colorzilla.com/gradient-editor/#cdeb8e+0,a5c956+100;Green+3D+%232
+.gradient-3 {
+  background-color: rgb(205,235,142); // Old browsers
+  @include filter-gradient(#cdeb8e, #a5c956, vertical); // IE6-9
+  @include background-image(linear-gradient(top, rgba(205,235,142,0.4) 0%,rgba(165,201,86,0.8) 100%), url(../img/header-foto.jpg));
+}
+
+// http://colorzilla.com/gradient-editor/#ffc578+0,fb9d23+100;Orange+3D+%233
+.gradient-4 {
+  background-color: rgb(255,197,120); // Old browsers
+  @include filter-gradient(#ffc578, #fb9d23, vertical); // IE6-9
+  @include background-image(linear-gradient(top, rgba(255,197,120,0.4) 0%,rgba(251,157,35,0.8) 100%), url(../img/header-foto.jpg));
+}
+
+// http://colorzilla.com/gradient-editor/#efc5ca+0,d24b5a+50,ba2737+51,f18e99+100;Red+Gloss+%233
+.gradient-5 {
+  background-color: rgb(239,197,202); // Old browsers
+  @include filter-gradient(#efc5ca, #f18e99, vertical); // IE6-9
+  @include background-image(linear-gradient(top, rgba(239,197,202,0.2) 0%,rgba(210,75,90,0.4) 50%,rgba(186,39,55,0.6) 51%,rgba(241,142,153,0.8) 100%), url(../img/header-foto.jpg));
+}
+
+// http://colorzilla.com/gradient-editor/#f85032+0,f16f5c+50,f6290c+51,f02f17+71,e73827+100;Red+Gloss+%231
+.gradient-6 {
+  background-color: rgb(248,80,50); // Old browsers
+  @include filter-gradient(#f85032, #e73827, vertical); // IE6-9
+  @include background-image(linear-gradient(top, rgba(248,80,50,0.2) 0%,rgba(241,111,92,0.4) 50%,rgba(246,41,12,0.6) 51%,rgba(240,47,23,0.8) 71%,rgba(231,56,39,1) 100%), url(../img/header-foto.jpg));
+}
+
+// http://colorzilla.com/gradient-editor/#f6e6b4+0,ed9017+100;Yellow+3D+%231
+.gradient-7 {
+  background-color: rgb(246,230,180); // Old browsers
+  @include filter-gradient(#f6e6b4, #ed9017, vertical); // IE6-9
+  @include background-image(linear-gradient(top, rgba(246,230,180,0.4) 0%,rgba(237,144,23,0.8) 100%), url(../img/header-foto.jpg));
+}
+
+// http://colorzilla.com/gradient-editor/#f6f8f9+0,e5ebee+50,d7dee3+51,f5f7f9+100;White+Gloss
+.gradient-8 {
+  background-color: rgb(246,248,249); // Old browsers
+  @include filter-gradient(#f6f8f9, #f5f7f9, vertical); // IE6-9
+  @include background-image(linear-gradient(top, rgba(246,248,249,0.2) 0%,rgba(229,235,238,0.4) 50%,rgba(215,222,227,0.6) 51%,rgba(245,247,249,0.8) 100%), url(../img/header-foto.jpg));
+}
