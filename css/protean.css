@@ -134,11 +134,6 @@ div#nav-background {
     height: 72px;
 }
 
-
-#nav2 {
-    padding-bottom: 8px;
-}
-
 @media (min-width: 1200px) {
     div#nav-background {
         height: 108px;
