@@ -45,13 +45,13 @@ body {
   font-size: 20px;
   color: #dadada; }
 
-.navbar-expand-sm .navbar-nav .nav2-link-style {
+.navbar-expand-lg .navbar-nav .nav2-link-style {
   padding-right: 1.25rem !important;
   padding-left: 1.25rem !important;
   padding-bottom: 1rem;
   color: #dedede;
   border-bottom: solid 2px #151515; }
-  .navbar-expand-sm .navbar-nav .nav2-link-style:hover {
+  .navbar-expand-lg .navbar-nav .nav2-link-style:hover {
     border-bottom: solid 2px #2a80f8; }
 
 img#logo-main-nav {
@@ -92,12 +92,12 @@ img#logo-main-nav {
     color: #dadada; }
 
 #main-header {
-    background-image: linear-gradient(to right bottom, rgba(14, 25, 110, 0.4), rgba(42, 128, 248, 0.4)), url(../img/header-foto.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 84.5vh;
-    color: white;
-}
+  background-image: linear-gradient(to right bottom, rgba(14, 25, 110, 0.4), rgba(42, 128, 248, 0.4)), url(../img/header-foto.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 84.5vh;
+  color: white;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 25% 100%, 0 70%); }
   #main-header .header-caption {
     padding-left: 100px;
     position: fixed; }
