@@ -100,14 +100,14 @@ body {
     color: $primary-light-color;
 }
 
-.navbar-expand-sm .navbar-nav .nav2-link-style {
+.navbar-expand-lg .navbar-nav .nav2-link-style {
     padding-right: 1.25rem !important;
     padding-left: 1.25rem !important;
     padding-bottom: 1rem;
     color: #dedede;
     border-bottom: solid 2px $secondary-dark-color;
 
-    &:hover {
+    &:hover { 
         border-bottom: solid 2px $logo-light-color;
     }
 }
@@ -371,12 +371,35 @@ div#copyright {
         display: none;
     }
 
+
+    .search-input {
+        width: 100%;
+        border-radius: 0;
+        padding: 12px;
+        margin-top: 15px;
+        height: 35px;
+    }
+    .navbar-collapse {
+        margin-left: 20px;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        border-bottom: 1px solid $text-color;
+        padding: 12px;
+        margin: 0;
+
+        &:hover {
+            background-color: $secondary-dark-color;
+        }
+    }
+
     .team-container {
         padding-left: 0;
         padding-right: 0;
         overflow-x: hidden;
 
     }
+
     .section-container {
         .article-text {
             padding: 0 40px;

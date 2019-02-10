@@ -23,18 +23,19 @@ $(window).magicNav({
     navSelector: '#nav2'
 });
 
-$(document).magicLine({
-    elementSelector:    '#main-header'
-});
-
 var rotatorConfig = {
     rotationDegrees: 1,
     rotationDurationMs: 300
 };
 
-$('#section-container-img-1 > img').magicRotator(rotatorConfig);
-$('#section-container-img-2 > img').magicRotator(rotatorConfig);
-$('#section-container-img-3 > img').magicRotator(rotatorConfig);
+var documentComputedStyle   = window.getComputedStyle(window.document.documentElement);
+var documentWidth           = documentComputedStyle.width.replace('px', '');
+
+if(documentWidth >= 1200) {
+    $('#section-container-img-1 > img').magicRotator(rotatorConfig);
+    $('#section-container-img-2 > img').magicRotator(rotatorConfig);
+    $('#section-container-img-3 > img').magicRotator(rotatorConfig);
+}
 
 
 $(document).ready(function() { 
