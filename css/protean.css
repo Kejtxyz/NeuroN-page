@@ -26,10 +26,10 @@
 
 .input-close-icon em {
     position: absolute;
-    top: 8px;
+    top: 15px;
     right: 8px;
     color: white;
-    font-size: 2em;
+    font-size: 1.4em;
 }
 
 #nav2 span.navbar-toggler {

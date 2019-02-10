@@ -189,7 +189,7 @@ img#logo-main-nav {
 
         img {
             height: 130px;
-            margin: 75px 0 20px 0;
+            margin: 40px 0 20px 0;
         }
 
         .header-text-container {
@@ -198,6 +198,12 @@ img#logo-main-nav {
             h1 {
                 font-size: 3.5em;
                 margin-bottom: 25px;
+            }
+
+            .header-icon {
+                color: white;
+                padding: 2px;
+                font-size: 16px;
             }
         }
     }

@@ -103,12 +103,16 @@ img#logo-main-nav {
     position: fixed; }
     #main-header .header-caption img {
       height: 130px;
-      margin: 75px 0 20px 0; }
+      margin: 40px 0 20px 0; }
     #main-header .header-caption .header-text-container {
       width: 50%; }
       #main-header .header-caption .header-text-container h1 {
         font-size: 3.5em;
         margin-bottom: 25px; }
+      #main-header .header-caption .header-text-container .header-icon {
+        color: white;
+        padding: 2px;
+        font-size: 16px; }
 
 .section-container {
   padding-top: 50px;
