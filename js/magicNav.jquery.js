@@ -52,7 +52,7 @@
     var onLeftMenuShowing = function(e) {
         $('body').addClass('noscroll');
 
-        $('#grey-layer').css('z-index', 10000);
+        $('#grey-layer').css('z-index', 50);
         $('#grey-layer').removeClass('animated fadeOut');
     };
 
@@ -76,7 +76,7 @@
     var onRightMenuShowing = function(e) {
         $('body').addClass('noscroll');
 
-        $('#grey-layer').css('z-index', 10000);
+        $('#grey-layer').css('z-index', 50);
         $('#grey-layer').removeClass('animated fadeOut');
     };
 
