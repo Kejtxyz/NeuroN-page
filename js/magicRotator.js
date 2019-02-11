@@ -54,7 +54,7 @@ if(documentWidth >= 1200) {
         previousScrollTop = currentScrollTop;
     };
 
-    document.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll);
 }
 
 
