@@ -20,9 +20,8 @@ var elements = [
 if(documentWidth >= 1200) {
     var skip = 0.3;
 
-    var limitFactor = 60;
-    var limitRight  = 30;//(skip * (1 * limitFactor));
-    var limitLeft   = -30;//(skip * (-1 * limitFactor));
+    var limitRight  = 15;
+    var limitLeft   = -15;
 
     var onScrollDown = function(e) {
         var currentElement = elements[0];
