@@ -18,7 +18,7 @@ var elements = [
 ];
 
 if(documentWidth >= 1200) {
-    var skip = 0.25;
+    var skip = 0.3;
 
     var limitFactor = 60;
     var limitRight  = 30;//(skip * (1 * limitFactor));
@@ -28,6 +28,7 @@ if(documentWidth >= 1200) {
         var currentElement = elements[0];
         if(currentElement.angle + skip <= limitRight) {
             currentElement.angle += skip;
+            console.log('transforming');
             currentElement.element.style.transform = 'rotate(' + currentElement.angle + 'deg)'
         }
     };
@@ -36,12 +37,13 @@ if(documentWidth >= 1200) {
         var currentElement = elements[0];
         if(currentElement.angle - skip >= limitLeft) {
             currentElement.angle -= skip;
+            console.log('transforming');
             currentElement.element.style.transform = 'rotate(' + currentElement.angle + 'deg)'
         }
     };
 
     var onScroll = function(e) {
-        console.log('triggered');
+
         var currentScrollTop = document.documentElement.scrollTop;
 
         if (previousScrollTop > currentScrollTop) {
