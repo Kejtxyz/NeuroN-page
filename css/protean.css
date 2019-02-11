@@ -92,9 +92,6 @@ body.noscroll {
     z-index: 10005;
 }
 
-#nav2 {
-    z-index: 10005;
-}
 
 #middle-toggler-icon {
     border: none;
@@ -110,7 +107,7 @@ body.noscroll {
     transition: transform 0.2s ease-in-out;
 }
 
-#main-header .header-caption {
+.header-caption {
     -webkit-transition: transform 0.5s ease-out;
 
     padding-left: 0px;
@@ -119,7 +116,7 @@ body.noscroll {
     top: 80px;
 }
 
-#main-header .header-caption img {
+.header-caption img {
     height: 130px;
     margin-top: 0px;
 }
@@ -145,4 +142,8 @@ div#nav-background {
         padding-top: 0px;
         padding-bottom: 0px;
     }
+}
+
+.link-active {
+    border-bottom: solid 2px #2a80f8 !important;
 }

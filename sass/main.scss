@@ -100,6 +100,10 @@ body {
     color: $primary-light-color;
 }
 
+.link-active {
+  border-bottom: solid 2px $secondary-dark-color;
+}
+
 .navbar-expand-lg .navbar-nav .nav2-link-style {
     padding-right: 1.25rem !important;
     padding-left: 1.25rem !important;
@@ -171,40 +175,35 @@ img#logo-main-nav {
 // header
 
 #main-header {
-    background-image: linear-gradient(
-            to right bottom,
-            rgba($logo-dark-color, 0.4),
-            rgba($logo-light-color, 0.4)
-        ),
-        url(../img/header-foto.jpg);
     background-size: cover;
     background-position: center;
     height: 84.5vh;
     color: white;
-    clip-path: polygon(0 0, 100% 0, 100% 70%, 25% 100%, 0 70%);
+}
 
-    .header-caption {
-        padding-left: 100px;
-        position: fixed;
 
-        img {
-            height: 130px;
-            margin: 40px 0 20px 0;
+.header-caption {
+    padding-left: 100px;
+    position: fixed;
+    color: white;
+
+    img {
+        height: 130px;
+        margin: 40px 0 20px 0;
+    }
+
+    .header-text-container {
+        width: 50%;
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 25px;
         }
 
-        .header-text-container {
-            width: 50%;
-
-            h1 {
-                font-size: 3.5em;
-                margin-bottom: 25px;
-            }
-
-            .header-icon {
-                color: white;
-                padding: 2px;
-                font-size: 16px;
-            }
+        .header-icon {
+            color: white;
+            padding: 2px;
+            font-size: 16px;
         }
     }
 }
@@ -398,7 +397,7 @@ div#copyright {
         background-color: $primary-dark-color;
         margin-left: 20px;
         margin-right: 20px;
-        padding: 0;
+        padding: 0; 
 
         a {
         text-align: end;
