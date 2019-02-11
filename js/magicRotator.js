@@ -18,11 +18,11 @@ var elements = [
 ];
 
 if(documentWidth >= 1200) {
-    var skip = 1;
+    var skip = 0.25;
 
-    var limitFactor = 30;
-    var limitRight  = (skip * (1 * limitFactor));
-    var limitLeft   = (skip * (-1 * limitFactor));
+    var limitFactor = 60;
+    var limitRight  = 30;//(skip * (1 * limitFactor));
+    var limitLeft   = -30;//(skip * (-1 * limitFactor));
 
     var onScrollDown = function(e) {
         var currentElement = elements[0];
@@ -41,6 +41,7 @@ if(documentWidth >= 1200) {
     };
 
     var onScroll = function(e) {
+        console.log('triggered');
         var currentScrollTop = document.documentElement.scrollTop;
 
         if (previousScrollTop > currentScrollTop) {
