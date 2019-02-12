@@ -1,71 +1,62 @@
 var documentComputedStyle   = window.getComputedStyle(window.document.documentElement);
 var documentWidth           = documentComputedStyle.width.replace('px', '');
-var previousScrollTop       = document.documentElement.scrollTop;
-
 var viewport = {
     height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 };
 
 function getElementData(selector) {
-    var element = document.querySelector(selector);
-    var height  = window.getComputedStyle(element)['height'].replace('px', '');
+    var element                     = document.querySelector(selector);
+    var elementComputedStyle        = window.getComputedStyle(element);
+
+    var height                      = elementComputedStyle['height'].replace('px', '');
+
+    var bodyBoundingClientRect      = document.body.getBoundingClientRect();
+    var elementBoundingClientRect   = element.getBoundingClientRect();
+    var top                         = parseInt(elementBoundingClientRect.top - bodyBoundingClientRect.top);
 
     return {
         element:    element,
         height:     height,
-        scrollOffsets: [ (viewport.height - height), (viewport.height - height) ],
-        deviations: [ -15, 15 ]
+        top:        top,
+        rotation: {
+            max: 15,
+            maxAttitude: viewport.height
+        }
     };
 }
 
 var elements = [
-    getElementData('#section-container-img-1 > img')
-    /*
-    {
-        element: document.querySelector('#section-container-img-2 > img'),
-        angle: 0
-    },
-    {
-        element: document.querySelector('#section-container-img-3 > img'),
-        angle: 0
-    }
-    */
+    getElementData('#section-container-img-1 > img'),
+    getElementData('#section-container-img-2 > img'),
+    getElementData('#section-container-img-3 > img')
 ];
+
 if(documentWidth >= 1200) {
-    var onScrollDown = function(e, currentScrollTop) {
+    var rotate = function(element) {
+        var currentScrollTop    = document.documentElement.scrollTop;
 
-        var currentElement = elements[0];
-        var offset          = currentElement.element.getBoundingClientRect().top + (currentElement.height / 2);
-        var scrollOffset    = currentElement.scrollOffsets[(offset > 0) ? 0 : 1];
-        var deviation       = currentElement.deviations[(offset > 0) ? 0 : 1];
-        var angle = (offset * deviation) / scrollOffset;
+        var currentAttitude     = -1 * (currentScrollTop - (element.top + (element.height/2)));
+        var landingAttitude     = element.rotation.maxAttitude;
+        var maximumLandingAngle = element.rotation.max;
+        var currentLandingAngle = -1 * ((currentAttitude * maximumLandingAngle) / landingAttitude);
+        var rotationFix         = 9;
 
+        currentLandingAngle += rotationFix;
 
-        currentElement.element.style.transform = 'rotate(' + angle + 'deg)';
-    };
+        if(currentLandingAngle < -1 * maximumLandingAngle) {
+            currentLandingAngle = -1 * maximumLandingAngle;
+        }
+        if(currentLandingAngle > maximumLandingAngle) {
+            currentLandingAngle = maximumLandingAngle;
+        }
 
-    var onScrollUp = function(e, currentScrollTop) {
-
-        var currentElement = elements[0];
-        var offset          = currentElement.element.getBoundingClientRect().top + (currentElement.height / 2);
-        var scrollOffset    = currentElement.scrollOffsets[(offset > 0) ? 0 : 1];
-        var deviation       = currentElement.deviations[(offset > 0) ? 0 : 1];
-        var angle = (offset * deviation) / scrollOffset;
-
-
-        currentElement.element.style.transform = 'rotate(' + angle + 'deg)';
+        element.element.style.transform = 'rotate(' + currentLandingAngle + 'deg)';
     };
 
     var onScroll = function(e) {
-
-        var currentScrollTop = document.documentElement.scrollTop;
-
-        if (previousScrollTop > currentScrollTop) {
-            onScrollUp(e, currentScrollTop);
-        } else {
-            onScrollDown(e, currentScrollTop);
-        }
-        previousScrollTop = currentScrollTop;
+       for(var i = 0; i < elements.length; i++) {
+           rotate(elements[i]);
+       }
     };
 
     window.addEventListener('scroll', onScroll);
