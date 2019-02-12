@@ -86,7 +86,7 @@
                 <!-- Mobile, see that hide-when-search IS NOT PRESENT there -->
                 <!-- We DO NOT hide these positions on mobile -->
                 <li class="nav-item nav-link-style d-sm-none">
-                    <a class="nav-link margin-top-style" href="#">Sklep<em class="px-2 icon-basket to-hide"></em></a>
+                    <a class="nav-link margin-top-style rwd-margin" href="#">Sklep<em class="px-2 icon-basket to-hide"></em></a>
                 </li>
                 <li class="nav-item nav-link-style d-sm-none">
                     <a class="nav-link margin-top-style" href="#">Pobierz<em class="px-2 icon-download to-hide"></em></a>
@@ -120,6 +120,7 @@
                         <li><a class="nav-link" href="#">AR</a></li>
                         <li><a class="nav-link" href="#">ZH</a></li>
                         <li><a class="nav-link" href="#">JA</a></li>
+                        <li><a class="nav-link" href="#">TR</a></li>
                     </ul>
                 </li>
             </ul>
@@ -134,7 +135,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar2">
             <ul class="navbar-nav text-center">
                 <li class="nav-item border-style d-lg-none">
-                    <h5 class="text-white">NASZE PROJEKTY</h5>
+                    <h5 class="text-white nav2-title">NASZE PROJEKTY</h5>
                 </li>
                 <li class="nav-item border-style">
                     <a class="nav-link nav2-link-style stateable" id="neuron-foundation-href" data-gradient_class="gradient-1" href="#">NeuroN Foundation</a>
@@ -165,7 +166,7 @@
     </nav>
 
     <div class="header-caption animated fadeIn">
-        <img src="img/logo-biale.png" alt="Logo białe" />
+        <img src="img/logo-biale.png" alt="Logo białe" id="header-logo"/>
         <div class="header-text-container">
             <h1>NeuroN Foundation</h1>
             <p>
@@ -174,8 +175,14 @@
                 reprehenderit corporis architecto in atque, cupiditate
                 asperiores error nesciunt.
             </p>
-            <a href="https://www.facebook.com/neuronfoundation/"><em class="header-icon icon-facebook"></em></a>
-            <a href="#news-section"><em class="header-icon icon-doc"></em></a>
+            <div class="header-icon-wrapper wrapper-margin">
+                <a href="https://www.facebook.com/neuronfoundation/"><em class="header-icon icon-facebook"></em></a>
+                <div class="header-icon-text"><p>LUBIĘ TO!</p></div>
+            </div>
+            <div class="header-icon-wrapper">
+                <a href="#news-section"><em class="header-icon icon-doc"></em></a>
+                <div class="header-icon-text"><p>PRZEJDŹ DO STRONY</p></div>
+            </div>
         </div>
     </div>
 

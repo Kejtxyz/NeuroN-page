@@ -122,6 +122,10 @@ img#logo-main-nav {
     margin-top: 0;
 }
 
+.nav2-title {
+    margin: 5px;
+}
+
 .search-input {
     background-image: linear-gradient(
             to right bottom,
@@ -204,6 +208,28 @@ img#logo-main-nav {
             color: white;
             padding: 2px;
             font-size: 16px;
+            vertical-align: middle;
+        }
+
+        .wrapper-margin {
+            margin-right: 15px;
+            
+        }
+
+        .header-icon-wrapper {
+            display: inline-block;
+
+        }
+        .header-icon-text {
+            border: solid 1px white;
+            display: inline-block;
+
+            p {
+                margin-bottom: 0;
+                padding: 5px;
+            }
+
+
         }
     }
 }
@@ -235,7 +261,7 @@ img#logo-main-nav {
     .section-img-right {
         transform: rotate(-15deg);
         margin-right: -50px;
-        margin-left: 80px;
+        margin-left: 100px;
     }
 
     .article-text {
@@ -370,7 +396,6 @@ div#copyright {
         display: none;
     }
 
-
     .search-input {
         width: 100%;
         border-radius: 0;
@@ -435,24 +460,25 @@ div#copyright {
 }
 
 @media all and (max-width: 425px) {
+
     .main-nav1 .nav-item {
         text-align: center;
     }
 
-    #main-header .header-caption {
-        padding-left: 70px;
-        position: fixed;
+    img#header-logo {
+        height: 70px;
+        margin: 50px 0 20px 0;
+    }
 
-        img {
-            height: 100px;
-            margin: 50px 0 20px 0;
-        }
+     .header-caption {
+        padding-left: 10px;
+        // position: fixed;
 
         .header-text-container {
-            width: 70%;
+            width: 90%;
 
             h1 {
-                font-size: 2.5em;
+                font-size: 40px;
                 margin-bottom: 20px;
             }
         }
