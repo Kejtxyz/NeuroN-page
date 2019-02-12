@@ -18,7 +18,7 @@ function getElementData(selector) {
         direction:          animateLeft ? 'left' : 'right',
         top:                top,
         rotation: {
-            max: 15,
+            max: 10,
             maxAttitude: viewport.height
         }
     };
@@ -32,10 +32,11 @@ var elements = [
 
 var rotate = function(element) {
     var currentScrollTop    = document.documentElement.scrollTop;
-    var rotationFix         = 9;
+
     var currentAttitude     = -1 * (currentScrollTop - (element.top + (element.height/2)));
     var landingAttitude     = element.rotation.maxAttitude;
     var maximumLandingAngle = element.rotation.max;
+    var rotationFix         = 0.6*maximumLandingAngle;
     var currentLandingAngle = (-1 * ((currentAttitude * maximumLandingAngle) / landingAttitude)) + rotationFix;
 
     if(element.direction === 'left') {
