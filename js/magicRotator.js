@@ -2,11 +2,25 @@ var documentComputedStyle   = window.getComputedStyle(window.document.documentEl
 var documentWidth           = documentComputedStyle.width.replace('px', '');
 var previousScrollTop       = document.documentElement.scrollTop;
 
+var viewport = {
+    height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+};
+
+function getElementData(selector) {
+    var element = document.querySelector(selector);
+    var height  = window.getComputedStyle(element)['height'].replace('px', '');
+
+    return {
+        element:    element,
+        height:     height,
+        scrollOffsets: [ (viewport.height - height), (viewport.height - height) ],
+        deviations: [ -15, 15 ]
+    };
+}
+
 var elements = [
-    {
-        element: document.querySelector('#section-container-img-1 > img'),
-        angle: 0
-    },
+    getElementData('#section-container-img-1 > img')
+    /*
     {
         element: document.querySelector('#section-container-img-2 > img'),
         angle: 0
@@ -15,30 +29,31 @@ var elements = [
         element: document.querySelector('#section-container-img-3 > img'),
         angle: 0
     }
+    */
 ];
-
 if(documentWidth >= 1200) {
-    var skip = 0.3;
+    var onScrollDown = function(e, currentScrollTop) {
 
-    var limitRight  = 15;
-    var limitLeft   = -15;
-
-    var onScrollDown = function(e) {
         var currentElement = elements[0];
-        if(currentElement.angle + skip <= limitRight) {
-            currentElement.angle += skip;
-            console.log('transforming');
-            currentElement.element.style.transform = 'rotate(' + currentElement.angle + 'deg)'
-        }
+        var offset          = currentElement.element.getBoundingClientRect().top + (currentElement.height / 2);
+        var scrollOffset    = currentElement.scrollOffsets[(offset > 0) ? 0 : 1];
+        var deviation       = currentElement.deviations[(offset > 0) ? 0 : 1];
+        var angle = (offset * deviation) / scrollOffset;
+
+
+        currentElement.element.style.transform = 'rotate(' + angle + 'deg)';
     };
 
-    var onScrollUp = function(e) {
+    var onScrollUp = function(e, currentScrollTop) {
+
         var currentElement = elements[0];
-        if(currentElement.angle - skip >= limitLeft) {
-            currentElement.angle -= skip;
-            console.log('transforming');
-            currentElement.element.style.transform = 'rotate(' + currentElement.angle + 'deg)'
-        }
+        var offset          = currentElement.element.getBoundingClientRect().top + (currentElement.height / 2);
+        var scrollOffset    = currentElement.scrollOffsets[(offset > 0) ? 0 : 1];
+        var deviation       = currentElement.deviations[(offset > 0) ? 0 : 1];
+        var angle = (offset * deviation) / scrollOffset;
+
+
+        currentElement.element.style.transform = 'rotate(' + angle + 'deg)';
     };
 
     var onScroll = function(e) {
@@ -46,9 +61,9 @@ if(documentWidth >= 1200) {
         var currentScrollTop = document.documentElement.scrollTop;
 
         if (previousScrollTop > currentScrollTop) {
-            onScrollUp(e);
+            onScrollUp(e, currentScrollTop);
         } else {
-            onScrollDown(e);
+            onScrollDown(e, currentScrollTop);
         }
         previousScrollTop = currentScrollTop;
     };
