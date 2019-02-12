@@ -31,7 +31,7 @@ var elements = [
 ];
 
 var rotate = function(element) {
-    var currentScrollTop    = document.documentElement.scrollTop;
+    var currentScrollTop    = $(document).scrollTop();
     var rotationFix         = 9;
     var currentAttitude     = -1 * (currentScrollTop - (element.top + (element.height/2)));
     var landingAttitude     = element.rotation.maxAttitude;
