@@ -62,6 +62,9 @@ img#logo-main-nav {
   margin-right: 15px;
   margin-top: 0; }
 
+.nav2-title {
+  margin: 5px; }
+
 .search-input {
   background-image: linear-gradient(to right bottom, #151515, #151515), url(../img/LUPA.png);
   background-size: contain;
@@ -115,7 +118,18 @@ img#logo-main-nav {
     .header-caption .header-text-container .header-icon {
       color: white;
       padding: 2px;
-      font-size: 16px; }
+      font-size: 16px;
+      vertical-align: middle; }
+    .header-caption .header-text-container .wrapper-margin {
+      margin-right: 15px; }
+    .header-caption .header-text-container .header-icon-wrapper {
+      display: inline-block; }
+    .header-caption .header-text-container .header-icon-text {
+      border: solid 1px white;
+      display: inline-block; }
+      .header-caption .header-text-container .header-icon-text p {
+        margin-bottom: 0;
+        padding: 5px; }
 
 .section-container {
   padding-top: 50px;
@@ -135,7 +149,7 @@ img#logo-main-nav {
   .section-container .section-img-right {
     transform: rotate(-15deg);
     margin-right: -50px;
-    margin-left: 80px; }
+    margin-left: 100px; }
   .section-container .article-text {
     width: 60%;
     padding: 120px 200px 120px 200px; }
@@ -264,16 +278,15 @@ div#copyright {
 @media all and (max-width: 425px) {
   .main-nav1 .nav-item {
     text-align: center; }
-  #main-header .header-caption {
-    padding-left: 70px;
-    position: fixed; }
-    #main-header .header-caption img {
-      height: 100px;
-      margin: 50px 0 20px 0; }
-    #main-header .header-caption .header-text-container {
-      width: 70%; }
-      #main-header .header-caption .header-text-container h1 {
-        font-size: 2.5em;
+  img#header-logo {
+    height: 70px;
+    margin: 50px 0 20px 0; }
+  .header-caption {
+    padding-left: 10px; }
+    .header-caption .header-text-container {
+      width: 90%; }
+      .header-caption .header-text-container h1 {
+        font-size: 40px;
         margin-bottom: 20px; }
   .section-container .article-text {
     margin-top: 40px;
