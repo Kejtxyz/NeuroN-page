@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "facebook.css",
+	"sources": [
+		"../sass/facebook.scss"
+	],
+	"sourcesContent": [
+		"span._49vh._2pi7 {\r\n    background-color: red;\r\n}\r\n "
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,IAAI,AAAA,MAAM,AAAA,MAAM,CAAC;EACb,gBAAgB,EAAE,GAAG,GACxB"
+}
