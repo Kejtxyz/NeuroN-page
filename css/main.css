@@ -85,9 +85,11 @@ img#logo-main-nav {
   color: white; }
 
 .header-caption {
-  padding-left: 100px;
+  color: white;
   position: fixed;
-  color: white; }
+  left: 100px;
+  top: 120px;
+  z-index: 100; }
   .header-caption img {
     height: 130px;
     margin: 40px 0 20px 0; }
@@ -116,7 +118,9 @@ img#logo-main-nav {
   padding-top: 50px;
   width: 100%;
   overflow-x: hidden;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  position: relative;
+  z-index: 1000; }
   .section-container .img-container {
     margin-top: 50px; }
   .section-container img {
@@ -140,23 +144,28 @@ img#logo-main-nav {
     .section-container .article-text p {
       color: #393939; }
 
-footer img#footer-logo {
-  max-width: 22%;
-  margin-bottom: 2.5rem; }
+#news-section {
+  position: relative;
+  z-index: 1000; }
 
-footer .footer-link {
-  padding-right: 0.85rem !important;
-  padding-left: 0.85rem !important;
-  color: #393939; }
-  footer .footer-link:hover, footer .footer-link:focus {
-    color: #2a80f8;
-    text-decoration: none; }
-
-footer .navbar-light .navbar-nav .footer-link-1 {
-  color: #393939; }
-  footer .navbar-light .navbar-nav .footer-link-1:hover, footer .navbar-light .navbar-nav .footer-link-1:focus {
-    color: #2a80f8;
-    text-decoration: none; }
+footer {
+  position: relative;
+  z-index: 1000; }
+  footer img#footer-logo {
+    max-width: 22%;
+    margin-bottom: 2.5rem; }
+  footer .footer-link {
+    padding-right: 0.85rem !important;
+    padding-left: 0.85rem !important;
+    color: #393939; }
+    footer .footer-link:hover, footer .footer-link:focus {
+      color: #2a80f8;
+      text-decoration: none; }
+  footer .navbar-light .navbar-nav .footer-link-1 {
+    color: #393939; }
+    footer .navbar-light .navbar-nav .footer-link-1:hover, footer .navbar-light .navbar-nav .footer-link-1:focus {
+      color: #2a80f8;
+      text-decoration: none; }
 
 div#copyright {
   height: 1.75rem;
@@ -237,6 +246,14 @@ div#copyright {
     padding: 0; }
     #nav2 a {
       text-align: end; }
+  .header-caption {
+    left: 30px;
+    top: 60px; }
+    .header-caption .header-text-container {
+      width: 90%; }
+    .header-caption img {
+      height: 100px;
+      margin: 40px 0 20px 0; }
   .team-container {
     padding-left: 0;
     padding-right: 0;
@@ -264,16 +281,19 @@ div#copyright {
     width: 10%; } }
 
 @media all and (max-width: 425px) {
-  img#header-logo {
-    height: 70px;
-    margin: 50px 0 20px 0; }
   .header-caption {
-    padding-left: 10px; }
+    left: 20px; }
     .header-caption .header-text-container {
       width: 90%; }
       .header-caption .header-text-container h1 {
-        font-size: 40px;
-        margin-bottom: 20px; }
+        font-size: 30px;
+        margin-bottom: 15px; }
+      .header-caption .header-text-container p {
+        font-size: 12px;
+        margin-bottom: 15px; }
+    .header-caption img {
+      height: 80px;
+      margin: 30px 0 15px 0; }
   .section-container .article-text {
     margin-top: 40px;
     margin-right: 0;

@@ -153,9 +153,12 @@ img#logo-main-nav {
 
 
 .header-caption {
-    padding-left: 100px;
-    position: fixed;
     color: white;
+    position: fixed;
+    left: 100px; 
+    top: 120px;
+    z-index: 100;
+    
 
     img {
         height: 130px;
@@ -207,6 +210,8 @@ img#logo-main-nav {
     width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
+    position: relative;
+    z-index: 1000;
 
     .img-container {
         margin-top: 50px;
@@ -246,9 +251,17 @@ img#logo-main-nav {
     }
 }
 
+#news-section {
+    position: relative;
+    z-index: 1000;
+}
+
 // footer
 
 footer {
+    position: relative;
+    z-index: 1000;
+
     img#footer-logo {
         max-width: 22%;
         margin-bottom: 2.5rem;
@@ -396,6 +409,20 @@ div#copyright {
        
     }
 
+    .header-caption {
+        left: 30px; 
+        top: 60px;
+
+        .header-text-container {
+            width: 90%;
+        }
+
+        img {
+            height: 100px;
+            margin: 40px 0 20px 0;
+        }
+    }
+
     .team-container {
         padding-left: 0;
         padding-right: 0;
@@ -403,7 +430,9 @@ div#copyright {
 
     }
 
+    
     .section-container {
+
         .article-text {
             padding: 0 40px;
             margin-top: 30px;
@@ -436,22 +465,26 @@ div#copyright {
 
 @media all and (max-width: 425px) {
 
-    img#header-logo {
-        height: 70px;
-        margin: 50px 0 20px 0;
-    }
-
      .header-caption {
-        padding-left: 10px;
-        // position: fixed;
+        left: 20px; 
 
         .header-text-container {
             width: 90%;
 
             h1 {
-                font-size: 40px;
-                margin-bottom: 20px;
+                font-size: 30px;
+                margin-bottom: 15px;
             }
+
+            p {
+                font-size: 12px;
+                margin-bottom: 15px;
+            }
+        }
+
+        img {
+            height: 80px;
+            margin: 30px 0 15px 0;
         }
     }
 
