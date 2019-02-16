@@ -1,3 +1,5 @@
+var useDeviceJs = (typeof DEVICE !== "undefined");
+
 var viewport = {
     height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 };
@@ -30,7 +32,13 @@ var elements = [
     getElementData('#section-container-img-3 > img')
 ];
 
-var rotate = function(element) {
+var rotate = function(element, forceAngle) {
+    // Used to reset element position on window resize
+    if(typeof forceAngle !== "undefined") {
+        element.element.style.transform = 'rotate(' + forceAngle + 'deg)';
+        return;
+    }
+
     var currentScrollTop    = $(document).scrollTop();
     var currentAttitude     = -1 * (currentScrollTop - (element.top + (element.height/2)));
     var landingAttitude     = element.rotation.maxAttitude;
@@ -51,4 +59,18 @@ var onScroll = function(e) {
    }
 };
 
-window.addEventListener('scroll', onScroll);
+window.addEventListener('resize', function() {
+    if(useDeviceJs) {
+        if(DEVICE.SIZE === DEVICE.DEVICE_SIZE_SMALL || DEVICE.SIZE === DEVICE.DEVICE_SIZE_MEDIUM) {
+            window.removeEventListener('scroll', onScroll);
+            for(var i = 0; i < elements.length; i++) {
+                rotate(elements[i], 0);
+            }
+        } else {
+            window.addEventListener('scroll', onScroll);
+        }
+    } else {
+        // This code should not be reachable unless somebody delete device.js file
+        window.addEventListener('scroll', onScroll);
+    }
+});
