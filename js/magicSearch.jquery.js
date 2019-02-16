@@ -87,8 +87,10 @@
         var $searchInput            = $(settings.searchInputSelector);
 
         $searchInputWrapper.removeClass("d-none");
-        $searchInput.removeClass("d-none");
         $searchInput.addClass("animated slow stretch");
+        setTimeout(function() {
+            $searchInput.removeClass("d-none");
+        }, 100);
     };
 
     var showSearchbarWithoutAnimation = function() {
