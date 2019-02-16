@@ -207,6 +207,7 @@ img#logo-main-nav {
 
 .section-container {
     padding-top: 50px;
+    padding-bottom: 50px;
     width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -232,7 +233,7 @@ img#logo-main-nav {
     .section-img-right {
         transform: rotate(-15deg);
         margin-right: -50px;
-        margin-left: 100px;
+        margin-left: 0px;
     }
 
     .article-text {
@@ -432,6 +433,7 @@ div#copyright {
 
     
     .section-container {
+        padding-bottom: 50px;
 
         .article-text {
             padding: 0 40px;
