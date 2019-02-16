@@ -1,8 +1,8 @@
 var DEVICE = (function () {
-    var DEVICE_SIZE_SMALL       = 'xs';
-    var DEVICE_SIZE_MEDIUM      = 'md';
-    var DEVICE_SIZE_LARGE       = 'lg';
-    var DEVICE_SIZE_EXTRA_LARGE = 'xlg';
+    var DEVICE_SIZE_SMALL       = 0;
+    var DEVICE_SIZE_MEDIUM      = 1;
+    var DEVICE_SIZE_LARGE       = 2;
+    var DEVICE_SIZE_EXTRA_LARGE = 3;
 
     var getDeviceSize = function() {
         var DEVICE_CHECK = (function(breakpoint) {

@@ -1,4 +1,7 @@
 (function ($) {
+    var useDeviceJs = (typeof DEVICE !== "undefined");
+    var disableOnSmallAndMediumDevices = true;
+
     var hidden = false;
 
     var defaults = {
@@ -146,6 +149,11 @@
     };
 
     $.fn.magicSearch = function(options) {
+        if(useDeviceJs && disableOnSmallAndMediumDevices && DEVICE.SIZE <= DEVICE.DEVICE_SIZE_MEDIUM) {
+            console.log('Aborting usage of magic search');
+            return;
+        }
+
         settings = $.extend(defaults, options);
 
         settings.element = (settings.selector !== null) ? $(settings.selector) : $(this);
