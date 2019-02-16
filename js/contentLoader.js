@@ -1,6 +1,6 @@
 var config = {
-    primaryUrl:     'http://localhost:8095',
-    fallbackUrl:    'https://protean.pl:8088'
+    primaryUrl:     'https://protean.pl:8088',
+    fallbackUrl:    'http://localhost:8095'
 };
 
 function loadNeuronFoundationContent() {
