@@ -1,4 +1,5 @@
 var useDeviceJs = (typeof DEVICE !== "undefined");
+var disableOnSmallAndMediumDevices = false;
 
 var viewport = {
     height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
@@ -59,18 +60,23 @@ var onScroll = function(e) {
    }
 };
 
-window.addEventListener('resize', function() {
-    if(useDeviceJs) {
-        if(DEVICE.SIZE === DEVICE.DEVICE_SIZE_SMALL || DEVICE.SIZE === DEVICE.DEVICE_SIZE_MEDIUM) {
-            window.removeEventListener('scroll', onScroll);
-            for(var i = 0; i < elements.length; i++) {
-                rotate(elements[i], 0);
+if(disableOnSmallAndMediumDevices) {
+    window.addEventListener('resize', function () {
+        if (useDeviceJs) {
+            if (DEVICE.SIZE === DEVICE.DEVICE_SIZE_SMALL || DEVICE.SIZE === DEVICE.DEVICE_SIZE_MEDIUM) {
+                window.removeEventListener('scroll', onScroll);
+                for (var i = 0; i < elements.length; i++) {
+                    rotate(elements[i], 0);
+                }
+            } else {
+                window.addEventListener('scroll', onScroll);
             }
         } else {
+            // This code should not be reachable unless somebody delete device.js file
             window.addEventListener('scroll', onScroll);
         }
-    } else {
-        // This code should not be reachable unless somebody delete device.js file
-        window.addEventListener('scroll', onScroll);
-    }
-});
+    });
+}
+else {
+    window.addEventListener('scroll', onScroll);
+}
