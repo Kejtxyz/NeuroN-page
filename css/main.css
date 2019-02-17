@@ -131,10 +131,10 @@ img#logo-main-nav {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5); }
   .section-container .section-img-left {
     transform: rotate(15deg);
-    margin-left: -50px; }
+    margin-left: -25px; }
   .section-container .section-img-right {
     transform: rotate(-15deg);
-    margin-right: -50px;
+    margin-right: -25px;
     margin-left: 0px; }
   .section-container .article-text {
     width: 60%;
