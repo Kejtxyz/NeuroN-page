@@ -5,8 +5,7 @@ var viewport = {
     height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 };
 
-function getElementData(selector) {
-    var element                     = document.querySelector(selector);
+function getElementData(element) {
     var elementComputedStyle        = window.getComputedStyle(element);
 
     var height                      = elementComputedStyle['height'].replace('px', '');
@@ -27,11 +26,12 @@ function getElementData(selector) {
     };
 }
 
-var elements = [
-    getElementData('#section-container-img-1 > img'),
-    getElementData('#section-container-img-2 > img'),
-    getElementData('#section-container-img-3 > img')
-];
+var _elements = document.getElementsByClassName('rotatable');
+var elements = [];
+
+for(var i = 0; i < _elements.length; i++) {
+    elements.push(getElementData(_elements[i]));
+}
 
 var rotate = function(element, forceAngle) {
     // Used to reset element position on window resize

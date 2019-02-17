@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mustache example</title>
+</head>
+<body>
+
+
+    <div id="main"></div>
+
+
+    <script src="vendor/jquery-3.3.1/jquery-3.3.1.js"></script>
+    <script src="vendor/mustache.js-3.0.1/mustache.js"></script>
+
+    <script id="myTemplate" type="text/html">
+        <span>{{name}}</span>
+    </script>
+
+    <script id="myTemplate2" type="text/html">
+        <ul>
+            {{#users}}
+                <li style="color:{{color}}">{{name}}</li>
+            {{/users}}
+        </ul>
+    </script>
+
+    <script>
+        var templateCode = $('#myTemplate').html();
+
+        var generatedHtml = Mustache.render(
+            templateCode,
+            {
+                name: 'John'
+            }
+        );
+
+        $('#main').html(generatedHtml);
+    </script>
+
+    <script>
+        var templateCode = $('#myTemplate2').html();
+
+        var generatedHtml = Mustache.render(
+            templateCode,
+            {
+                users: [
+                    {
+                        name: 'John',
+                        color: 'black'
+                    },
+                    {
+                        name: 'Maria',
+                        color: 'green'
+                    },
+                    {
+                        name: 'Will',
+                        color: 'black'
+                    }
+                ]
+            }
+        );
+
+        $('#main').html(generatedHtml);
+    </script>
+</body>
+</html>
