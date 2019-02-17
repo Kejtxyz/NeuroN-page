@@ -157,7 +157,7 @@ img#logo-main-nav {
     position: fixed;
     left: 100px; 
     top: 120px;
-    z-index: 100;
+    z-index: 0;
     
 
     img {
@@ -527,4 +527,8 @@ div#copyright {
 
 .rotatable {
     will-change: transform, rotate;
+}
+
+#main {
+    z-index: 50;
 }

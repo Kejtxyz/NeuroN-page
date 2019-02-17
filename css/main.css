@@ -89,7 +89,7 @@ img#logo-main-nav {
   position: fixed;
   left: 100px;
   top: 120px;
-  z-index: 100; }
+  z-index: 0; }
   .header-caption img {
     height: 130px;
     margin: 40px 0 20px 0; }
@@ -319,5 +319,8 @@ div#copyright {
 
 .rotatable {
   will-change: transform, rotate; }
+
+#main {
+  z-index: 50; }
 
 /*# sourceMappingURL=main.css.map */
