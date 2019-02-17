@@ -524,3 +524,7 @@ div#copyright {
 
 
 }
+
+.rotatable {
+    will-change: transform, rotate;
+}

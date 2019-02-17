@@ -317,4 +317,7 @@ div#copyright {
   .section-container .section-img-right {
     margin-left: 0px; } }
 
+.rotatable {
+  will-change: transform, rotate; }
+
 /*# sourceMappingURL=main.css.map */
