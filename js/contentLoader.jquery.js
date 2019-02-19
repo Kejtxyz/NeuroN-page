@@ -24,6 +24,12 @@
 
                         response = parser(response);
 
+                        var template = '/templates/' + template + '.html';
+
+                        if(window.location.host.contains('github')) {
+                            template = '/NeuroN-page' + template;
+                        }
+
                         $.ajax('/templates/' + template + '.html', {
                             success: function(template) {
                                 var html = Mustache.render(template, response);
