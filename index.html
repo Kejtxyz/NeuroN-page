@@ -28,6 +28,7 @@
     <div id="fb-root"></div>
     <script async defer src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v3.2&appId=184174189194724&autoLogAppEvents=1"></script>
 
+
     <!-- Change z-index of this layer when opening collapsible menu so the height of collapsed content won't be hacked -->
     <!-- By default its not visible as its z-index is lower than anything else -->
     <div id="grey-layer" class="bg-layer-grey"></div>
@@ -181,15 +182,28 @@
                 asperiores error nesciunt.
             </p>
             <div class="header-icon-wrapper wrapper-margin to-hide">
-                <div class="fb-like" data-href="https://www.facebook.com/neuronfoundation/" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
-                
-                <a href="https://www.facebook.com/neuronfoundation/"><em class="header-icon icon-facebook"></em></a>
-                <div class="header-icon-text"><p>LUBIĘ TO!</p>
-            </div>
+                <div id="headerCaptionButtonsWrapper">
+                    <!-- Because #likeButtonWrapper has no pointer events -->
+                    <div id="likeButtonWrapper0">
+                        <div id="likeButtonWrapper">
+                            <a href="https://www.facebook.com/neuronfoundation/">
+                                <em class="boxedIcon header-icon icon-facebook"></em>
+                            </a>
+                            <div class="header-icon-text">
+                                <p>LUBIĘ TO!</p>
+                            </div>
+                        </div>
+                        <div id="framewrapper">
+                            <div id="fbIframe" class="fb-like" data-href="https://www.facebook.com/neuronfoundation/" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="false"></div>
+                        </div>
+                    </div>
+                    <div id="gotoWrapper">
+                        <a href="#news-section">
+                            <em class="boxedIcon header-icon icon-doc"></em>
+                        </a>
+                        <div class="header-icon-text"><p>PRZEJDŹ DO STRONY</p></div>
+                    </div>
                 </div>
-            <div class="header-icon-wrapper to-hide">
-                <a href="#news-section"><em class="header-icon icon-doc"></em></a>
-                <div class="header-icon-text"><p>PRZEJDŹ DO STRONY</p></div>
             </div>
         </div>
     </div>
@@ -303,7 +317,6 @@
     <script src="js/magicSearch.jquery.js"></script>
     <script src="js/magicTabs.jquery.js"></script>
     <script src="js/magicNav.jquery.js"></script>
-
     <script src="main.js"></script>
 
     <script src="js/contentLoader.js"></script>

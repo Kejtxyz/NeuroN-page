@@ -1,5 +1,5 @@
 var config = {
-    primaryUrl:     'http://protean.pl:8088',
+    primaryUrl:     'https://api.oak.protean.pl/',
     fallbackUrl:    'http://localhost:8095'
 };
 
