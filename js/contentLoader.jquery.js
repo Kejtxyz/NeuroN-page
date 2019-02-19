@@ -47,7 +47,15 @@
                 success: function(response) {
                     $(selector).addClass("animated fadeOut");
                     response = parser(response);
-                    $.ajax('/templates/' + template + '.html', {
+
+                    var prefix = '';
+                    if(window.location.host.indexOf('github') !== -1) {
+                        prefix = '/NeuroN-page';
+                    }
+
+                    var template = prefix + '/templates/' + settings.template + '.html';
+
+                    $.ajax(template, {
                         success: function(template) {
                             var html = Mustache.render(template, response);
                             $('html, body').animate({
