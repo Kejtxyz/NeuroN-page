@@ -44,6 +44,9 @@ document.addEventListener('scroll', function() {
     var percent         = getAnimationPercent($(document).scrollTop(), max);
     var scrollPercent   = parseInt(percent*100);
 
-    requestAnimation(leftPolygon, [0,100, 0, (scrollPercent/3.75)+70, 100,100], [0,100, 0,scrollPercent, 100,100]);
-    requestAnimation(rightPolygon, [100, 100, 100, (scrollPercent/2.50)+50, 0, 100], [100, 100, 100, scrollPercent+30, 0, 100]);
+    var leftFactor = 3.55;
+    var rightFactor = 2.30;
+
+    requestAnimation(leftPolygon, [0,100, 0, (scrollPercent/leftFactor)+70, 100,100], [0,100, 0,scrollPercent, 100,100]);
+    requestAnimation(rightPolygon, [100, 100, 100, (scrollPercent/rightFactor)+50, 0, 100], [100, 100, 100, scrollPercent+30, 0, 100]);
 });

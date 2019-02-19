@@ -8,7 +8,9 @@
     var settings = defaults;
 
     $.fn.contentLoader = function(options, url, template, selector, parser, after) {
-        settings = $.extend(defaults, options);
+        settings = $.extend(defaults, options, {
+            template: template
+        });
 
         if(settings.rootUrl === null) {
             $.ajax(settings.primaryUrl, {
@@ -21,7 +23,6 @@
             }).done(function(server) {
                 $.ajax(settings.rootUrl + url, {
                     success: function(response) {
-
                         response = parser(response);
 
                         var prefix = '';
@@ -29,9 +30,9 @@
                             prefix = '/NeuroN-page';
                         }
 
-                        var template = prefix + '/templates/' + template + '.html';
-                        
-                        $.ajax('/templates/' + template + '.html', {
+                        var template = prefix + '/templates/' + settings.template + '.html';
+
+                        $.ajax(template, {
                             success: function(template) {
                                 var html = Mustache.render(template, response);
                                 $(selector).html(html);
