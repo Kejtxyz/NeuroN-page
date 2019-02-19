@@ -26,7 +26,7 @@
 
                         var template = '/templates/' + template + '.html';
 
-                        if(window.location.host.contains('github')) {
+                        if(window.location.host.indexOf('github') !== -1) {
                             template = '/NeuroN-page' + template;
                         }
 
