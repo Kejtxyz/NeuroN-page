@@ -24,12 +24,13 @@
 
                         response = parser(response);
 
-                        var template = '/templates/' + template + '.html';
-
+                        var prefix = '';
                         if(window.location.host.indexOf('github') !== -1) {
-                            template = '/NeuroN-page' + template;
+                            prefix = '/NeuroN-page';
                         }
 
+                        var template = prefix + '/templates/' + template + '.html';
+                        
                         $.ajax('/templates/' + template + '.html', {
                             success: function(template) {
                                 var html = Mustache.render(template, response);
