@@ -376,6 +376,10 @@ div#copyright {
         display: none;
     }
 
+    li.nav-item.nav-link-style-d-sm-none {
+        margin-top: 12px;
+    }
+
     .search-input {
         width: 100%;
         border-radius: 0;
@@ -466,6 +470,10 @@ div#copyright {
 }
 
 @media all and (max-width: 425px) {
+
+    li.nav-item.nav-link-style-d-sm-none {
+        margin-top: 12px;
+    }
 
      .header-caption {
         left: 20px; 
