@@ -39,3 +39,17 @@ $(document).ready(function() {
 
 });
 
+$('#gotoWrapper').mouseenter(function() {
+    $(this).addClass('gradiented');
+});
+$('#gotoWrapper').mouseleave(function() {
+    $(this).removeClass('gradiented');
+});
+
+
+$('#likeButtonWrapper0').mouseenter(function() {
+    $(this).addClass('gradiented');
+});
+$('#likeButtonWrapper0').mouseleave(function() {
+    $(this).removeClass('gradiented');
+});
