@@ -18,6 +18,10 @@
     background-color: black;
 }
 
+#scroll-button { 
+    z-index: 10000000;
+}
+
 #scroll-button em {
     color: #2a80f8;
     font-size: 12px;
