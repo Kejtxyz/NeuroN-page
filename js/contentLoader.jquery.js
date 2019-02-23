@@ -59,7 +59,7 @@
                         success: function(template) {
                             var html = Mustache.render(template, response);
                             $('html, body').animate({
-                                scrollTop: $(selector).offset().top
+                                scrollTop: 0
                             }, 1000);
                             setTimeout(function() {
                                 $(selector).addClass("fadeIn");
