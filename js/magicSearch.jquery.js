@@ -11,13 +11,12 @@
         searchButtonSelector: null,
         hideableElementsSelector: null,
         searchInputWrapperSelector: null,
-        showSearchbarWithoutAnimationSelector: null,
         additionalNoHideIdSelectors: [],
         hideAnimation: 'zoomOut',
         showAnimation: 'zoomIn',
         searchInputSelector: 'input[name="search"]',
         delayBetweenShowPrimaryMenuAnimationStart: 250,
-        delayBetweenSearchBarAnimationStart: 250
+        delayBetweenSearchBarAnimationStart: 400
     };
 
     var settings = defaults;
@@ -49,7 +48,10 @@
     var hidePrimaryMenu = function() {
         var windowWidth = $(window).width();
 
-        setTimeout(function() {
+        var $hideableElements = $(settings.primaryMenuSelector).find(settings.hideableElementsSelector);
+        $hideableElements.addClass("animated " + settings.hideAnimation);
+
+        $($hideableElements[0]).one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
             $hideableElements.each(function() {
                 if(windowWidth > 360) {
                     $(this).removeClass('d-sm-block');
@@ -57,28 +59,15 @@
                 $(this).addClass('d-none');
             });
             $(settings.searchInputWrapperSelector).css('display', 'block');
-        }, 400);
+            $($hideableElements[0]).one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){});
 
-
-        var $hideableElements = $(settings.primaryMenuSelector).find(settings.hideableElementsSelector);
-        $hideableElements.addClass("animated " + settings.hideAnimation);
-
-        hidden = true;
+            hidden = true;
+        });
     };
 
     var showPrimaryMenu = function() {
         var $elements = $(settings.primaryMenuSelector).find(settings.hideableElementsSelector);
-        $elements.removeClass(settings.hideAnimation);
-        $elements.each(function() {
-            var $this = $(this);
-            if($this[0] === $(settings.searchButtonSelector)[0]) {
-                $this.removeClass("d-none d-sm-block");
-                $this.addClass("animated " + settings.showAnimation);
-            } else {
-                $this.addClass("d-none d-sm-block animated " + settings.showAnimation);
-            }
-        });
-
+        $elements.removeClass("d-none " + settings.hideAnimation);
 
         hidden = false;
     };
@@ -93,18 +82,12 @@
         $searchInput.addClass("animated slow stretch");
         setTimeout(function() {
             $searchInput.removeClass("d-none");
+            $(settings.searchInputSelector).focus();
         }, 100);
     };
 
-    var showSearchbarWithoutAnimation = function() {
-        var $searchInputWrapper     = $(settings.searchInputWrapperSelector);
-        $searchInputWrapper.css('display', 'block');
-        $searchInputWrapper.find('input').removeClass('d-none');
-    };
-
-    var isSearchBarVisible = function() {
-        var $searchInput            = $(settings.searchInputSelector);
-        return $searchInput.is(":visible");
+    var isSearchBarHidden = function() {
+        return !$(settings.searchInputSelector).is(":visible");
     };
 
     var hideSearchbar = function(callback) {
@@ -125,7 +108,7 @@
     };
 
     var onAnyClick = function(e) {
-        if(!isSearchBarVisible()) {
+        if(isSearchBarHidden()) {
             return;
         }
 

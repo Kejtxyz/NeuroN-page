@@ -24,20 +24,50 @@
                 $.ajax(settings.rootUrl + url, {
                     success: function(response) {
                         response = parser(response);
-
                         var prefix = '';
                         if(window.location.host.indexOf('github') !== -1) {
                             prefix = '/NeuroN-page';
                         }
 
-                        var template = prefix + '/templates/' + settings.template + '.html';
+                        var contentHtml;
+                        var newsHtml;
+                        var defaultHtml;
+                        $.when(
+                            $.ajax({ // First Request
+                                url: prefix + '/templates/default_content_template.html',
+                                success: function(html){
+                                    contentHtml = html;
+                                }
+                            }),
 
-                        $.ajax(template, {
-                            success: function(template) {
-                                var html = Mustache.render(template, response);
+                            $.ajax({ //Seconds Request
+                                url: prefix + '/templates/default_news_template.html',
+                                success: function(html){
+                                    newsHtml = html;
+                                }
+                            }),
+
+                            $.ajax({ //Seconds Request
+                                url: prefix + '/templates/' + settings.template + '.html',
+                                success: function(html){
+                                    defaultHtml = html;
+                                }
+                            })
+
+                        ).then(function() {
+                            var html = Mustache.render(defaultHtml, response, {
+                                content: contentHtml,
+                                news: newsHtml
+                            });
+                            $('html, body').animate({
+                                scrollTop: 0
+                            }, 1000);
+                            setTimeout(function() {
+                                $(selector).addClass("fadeIn");
+                                $(selector).removeClass("fadeOut");
                                 $(selector).html(html);
                                 after();
-                            }
+                            }, 500);
                         });
                     }
                 });
@@ -45,6 +75,56 @@
         } else {
             $.ajax(settings.rootUrl + url, {
                 success: function(response) {
+
+                        response = parser(response);
+                        var prefix = '';
+                        if(window.location.host.indexOf('github') !== -1) {
+                            prefix = '/NeuroN-page';
+                        }
+
+                        var contentHtml;
+                        var newsHtml;
+                        var defaultHtml;
+                        $.when(
+                            $.ajax({ // First Request
+                                url: prefix + '/templates/default_content_template.html',
+                                success: function(html){
+                                    contentHtml = html;
+                                }
+                            }),
+
+                            $.ajax({ //Seconds Request
+                                url: prefix + '/templates/default_news_template.html',
+                                success: function(html){
+                                    newsHtml = html;
+                                }
+                            }),
+
+                            $.ajax({ //Seconds Request
+                                url: prefix + '/templates/' + settings.template + '.html',
+                                success: function(html){
+                                    defaultHtml = html;
+                                }
+                            })
+
+                        ).then(function() {
+                            var html = Mustache.render(defaultHtml, response, {
+                                content: contentHtml,
+                                news: newsHtml
+                            });
+                            $('html, body').animate({
+                                scrollTop: 0
+                            }, 1000);
+                            setTimeout(function() {
+                                $(selector).addClass("fadeIn");
+                                $(selector).removeClass("fadeOut");
+                                $(selector).html(html);
+                                after();
+                            }, 500);
+                        });
+
+                    /*
+
                     $(selector).addClass("animated fadeOut");
                     response = parser(response);
 
@@ -53,13 +133,15 @@
                         prefix = '/NeuroN-page';
                     }
 
+
+
                     var template = prefix + '/templates/' + settings.template + '.html';
 
                     $.ajax(template, {
                         success: function(template) {
                             var html = Mustache.render(template, response);
                             $('html, body').animate({
-                                scrollTop: $(selector).offset().top
+                                scrollTop: 0
                             }, 1000);
                             setTimeout(function() {
                                 $(selector).addClass("fadeIn");
@@ -69,6 +151,7 @@
                             }, 500);
                         }
                     });
+                    */
                 }
             });
         }

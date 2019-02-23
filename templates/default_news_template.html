@@ -1,0 +1,21 @@
+<section id="news-section">
+    <div class="container-fluid">
+        <div class="card-deck">
+            {{#news}}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="powiekszenie">
+                        <img src="{{image}}" class="img-fluid" alt="Projekt {{index}}"/>
+                    </div>
+                    <h6 class="card-title" style="text-align:center">
+                        Nazwa aktualności {{index}}
+                    </h6>
+                    <p class="p-2" style="text-align: justify;">
+                        {{content}}
+                    </p>
+                </div>
+            </div>
+            {{/news}}
+        </div>
+    </div>
+</section>
