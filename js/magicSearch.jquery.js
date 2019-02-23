@@ -82,6 +82,7 @@
         $searchInput.addClass("animated slow stretch");
         setTimeout(function() {
             $searchInput.removeClass("d-none");
+            $(settings.searchInputSelector).focus();
         }, 100);
     };
 
