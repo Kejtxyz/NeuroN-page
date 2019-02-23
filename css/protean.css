@@ -47,7 +47,7 @@ nav.main-nav1 {
 @media (min-width: 992px) {
     #searchInputListElement {
         display: none;
-        width: 500px;
+        width: 450px;
     }
 }
 
@@ -104,21 +104,6 @@ body.noscroll {
     transition: transform 0.2s ease-in-out;
 }
 
-/* .header-caption {
-    -webkit-transition: transform 0.5s ease-out;
-
-    padding-left: 0px;
-    position: absolute;
-    left: 100px;
-    top: 80px;
-} */
-
-/* .header-caption img {
-    height: 130px;
-    margin-top: 0px;
-} */
-
-/* <div class="position-absolute w-100 d-sm-none" style=""></div> */
 div#nav-background {
     position: absolute;
     top: 0px;
