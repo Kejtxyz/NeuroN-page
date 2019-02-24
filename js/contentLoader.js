@@ -144,7 +144,8 @@ function loadContactContent() {
         },
         function() {
 
-        }
+        },
+        false
     );
     return false;
 }
