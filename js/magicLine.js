@@ -9,8 +9,7 @@ var max             = element.offsetHeight;
 // max - wysokość elementu w którym mamy SVG, tj. #main-header
 // Tak więc jeżeli max = 500px a scrolltop to 250px, to jesteśmy w 50% animacji
 function getAnimationPercent(current, max) {
-    var ratio   = current /  max;
-    return (ratio > 1) ? 1 : ratio;
+    return current /  max;
 }
 
 // Wrzuca request animacji do kolejki (raf)
@@ -41,12 +40,11 @@ function requestAnimation(element, points) {
 
 // A tu scroll event
 document.addEventListener('scroll', function() {
-    var percent         = getAnimationPercent($(document).scrollTop(), max);
-    var scrollPercent   = parseInt(percent*100);
+    var scrollPercent   = parseInt(($(document).scrollTop() / max)*100);
 
     var leftFactor = 3.55;
     var rightFactor = 2.30;
 
-    requestAnimation(leftPolygon, [0,100, 0, (scrollPercent/leftFactor)+70, 100,100], [0,100, 0,scrollPercent, 100,100]);
-    requestAnimation(rightPolygon, [100, 100, 100, (scrollPercent/rightFactor)+50, 0, 100], [100, 100, 100, scrollPercent+30, 0, 100]);
+    requestAnimation(leftPolygon, [0,100, 0, (scrollPercent/leftFactor)+70, 100,100]);
+    requestAnimation(rightPolygon, [100, 100, 100, (scrollPercent/rightFactor)+50, 0, 100]);
 });
