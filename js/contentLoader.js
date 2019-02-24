@@ -65,6 +65,90 @@ function loadOakAtlantisContent() {
     return false;
 }
 
+function loadContactContent() {
+    $(document).contentLoader(
+        config,
+        '/api/tab/about_us',
+        'contact',
+        '#main',
+        function(response) {
+            return {
+                projects: [
+                    {
+                        code: "neuron-foundation",
+                        text: "NeuroN Foundation"
+                    },
+                    {
+                        code: "new-neuropsychiatry",
+                        text: "New Neuropsychiatry"
+                    },
+                    {
+                        code: "neuron-direction",
+                        text: "NeuroN Direction"
+                    },
+                    {
+                        code: "oakes-innovate",
+                        text: "Oakes Innovate"
+                    },
+                    {
+                        code: "ntv-channel",
+                        text: "NTV Channel"
+                    },
+                    {
+                        code: "oakes-clinic",
+                        text: "Oakes Clinic"
+                    },
+                    {
+                        code: "oak-atlantis",
+                        text: "Oak Atlantis"
+                    }
+                ],
+                contacts: [
+                    {
+                        name:   'NeuroN Foundation',
+                        email:  'biuro@neuronfoundation.com',
+                        phone:  '‭+48 514 438 369‬'
+                    },
+                    {
+                        name:   'New Neuropsychiatry',
+                        email:  'biuro@newneuropsychiatry.com',
+                        phone:  '+48 795 553 121'
+                    },
+                    {
+                        name:   'NeuroN Direction',
+                        email:  'biuro@neurondirection.com',
+                        phone:  '+48 797 620 025'
+                    },
+                    {
+                        name:   'Oakes Innovate',
+                        email:  'biuro@oakesinnovate.com',
+                        phone:  '+48 889 222 988'
+                    },
+                    {
+                        name:   'NTV Channel',
+                        email:  'biuro@ntv.com',
+                        phone:  '‭+48 514 438 369‬'
+                    },
+                    {
+                        name:   'Oakes Clinic',
+                        email:  'biuro@oakesclinic.com',
+                        phone:  '+48 889 222 988‬'
+                    },
+                    {
+                        name:   'Oak Atlantis',
+                        email:  'biuro@oakisland.com',
+                        phone:  '+48 889 222 988‬'
+                    }
+                ]
+            };
+        },
+        function() {
+
+        }
+    );
+    return false;
+}
+
 function loadAboutUsContent() {
     $(document).contentLoader(
         config,
@@ -91,3 +175,4 @@ $(document).on('click', '[data-content_loader="ntv_channel"]', loadNTVChannelCon
 $(document).on('click', '[data-content_loader="oakes_clinic"]', loadOakesClinicContent);
 $(document).on('click', '[data-content_loader="oak_atlantis"]', loadOakAtlantisContent);
 $(document).on('click', '[data-content_loader="about_us"]', loadAboutUsContent);
+$(document).on('click', '[data-content_loader="contact"]', loadContactContent);
