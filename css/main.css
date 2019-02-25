@@ -81,7 +81,7 @@ img#logo-main-nav {
 #main-header {
   background-size: cover;
   background-position: center;
-  height: 84.5vh;
+  height: 528px;
   color: white; }
 
 .header-caption {
@@ -101,7 +101,7 @@ img#logo-main-nav {
     .header-caption .header-text-container .header-icon {
       color: white;
       padding: 2px;
-      font-size: 16px;
+      font-size: 20px;
       vertical-align: middle; }
     .header-caption .header-text-container .wrapper-margin {
       margin-right: 15px; }
@@ -111,8 +111,13 @@ img#logo-main-nav {
       border: solid 1px white;
       display: inline-block; }
       .header-caption .header-text-container .header-icon-text p {
-        margin-bottom: 0;
-        padding: 5px; }
+        padding: 5px;
+        display: inline;
+        vertical-align: middle; }
+      .header-caption .header-text-container .header-icon-text a {
+        text-decoration: none; }
+      .header-caption .header-text-container .header-icon-text .fb-like-p {
+        padding-left: 0; }
 
 .section-container {
   padding-top: 50px;
