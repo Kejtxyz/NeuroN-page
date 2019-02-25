@@ -505,6 +505,23 @@ div#copyright {
             height: 80px;
             margin: 30px 0 15px 0;
         }
+
+        #headerCaptionButtonsWrapper {
+            display: block;
+
+            #likeButtonWrapper0 {
+                margin-top: 50px;
+            }
+
+            #gotoWrapper {
+                display: inline-block;
+                order: 1;
+                margin-left: 0;
+            }
+        }
+
+            
+        
     }
 
     .section-container {
