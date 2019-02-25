@@ -47,6 +47,12 @@
 
     var onLeftTogglerClick = function(e) {
         $('#collapsibleNavbar').collapse('toggle');
+
+        if(typeof e !== "undefined") {
+            if(isRightMenuOpen()) {
+                onRightTogglerClick();
+            }
+        }
     };
 
     var onLeftMenuShowing = function(e) {
@@ -97,6 +103,12 @@
 
     var onRightTogglerClick = function(e) {
         $('#collapsibleNavbar2').collapse('toggle');
+
+        if(typeof e !== "undefined") {
+            if(isLeftMenuOpen()) {
+                onLeftTogglerClick();
+            }
+        }
     };
 
     var isLeftMenuOpen = function() {

@@ -40,27 +40,20 @@ nav.main-nav1 {
     height: 40px;
 }
 
-@media (min-width: 576px) {
-    #searchInputListElement {
-        display: none;
-        width: 500px;
-    }
-}
-
-@media (min-width: 768px) {
-    #searchInputListElement {
-        width: 670px;
-    }
+#searchInputListElement {
+    width: auto;
 }
 
 @media (min-width: 992px) {
     #searchInputListElement {
-        width: 500px;
+        display: none;
+        width: 450px;
     }
 }
 
 @media (min-width: 1200px) {
     #searchInputListElement {
+        display: none;
         width: 500px;
     }
 }
@@ -111,21 +104,6 @@ body.noscroll {
     transition: transform 0.2s ease-in-out;
 }
 
-/* .header-caption {
-    -webkit-transition: transform 0.5s ease-out;
-
-    padding-left: 0px;
-    position: absolute;
-    left: 100px;
-    top: 80px;
-} */
-
-/* .header-caption img {
-    height: 130px;
-    margin-top: 0px;
-} */
-
-/* <div class="position-absolute w-100 d-sm-none" style=""></div> */
 div#nav-background {
     position: absolute;
     top: 0px;
@@ -146,6 +124,10 @@ div#nav-background {
         padding-top: 0px;
         padding-bottom: 0px;
     }
+}
+
+@media (max-width: 992px) {
+
 }
 
 .link-active {

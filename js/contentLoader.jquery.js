@@ -7,7 +7,11 @@
 
     var settings = defaults;
 
-    $.fn.contentLoader = function(options, url, template, selector, parser, after) {
+    $.fn.contentLoader = function(options, url, template, selector, parser, after, scrollTop) {
+        if(typeof scrollTop === "undefined") {
+            scrollTop = true;
+        }
+
         settings = $.extend(defaults, options, {
             template: template
         });
@@ -24,42 +28,43 @@
                 $.ajax(settings.rootUrl + url, {
                     success: function(response) {
                         response = parser(response);
-
                         var prefix = '';
                         if(window.location.host.indexOf('github') !== -1) {
                             prefix = '/NeuroN-page';
                         }
 
-                        var template = prefix + '/templates/' + settings.template + '.html';
+                        var contentHtml;
+                        var newsHtml;
+                        var defaultHtml;
+                        $.when(
+                            $.ajax({ // First Request
+                                url: prefix + '/templates/default_content_template.html',
+                                success: function(html){
+                                    contentHtml = html;
+                                }
+                            }),
 
-                        $.ajax(template, {
-                            success: function(template) {
-                                var html = Mustache.render(template, response);
-                                $(selector).html(html);
-                                after();
-                            }
-                        });
-                    }
-                });
-            });
-        } else {
-            $.ajax(settings.rootUrl + url, {
-                success: function(response) {
-                    $(selector).addClass("animated fadeOut");
-                    response = parser(response);
+                            $.ajax({ //Seconds Request
+                                url: prefix + '/templates/default_news_template.html',
+                                success: function(html){
+                                    newsHtml = html;
+                                }
+                            }),
 
-                    var prefix = '';
-                    if(window.location.host.indexOf('github') !== -1) {
-                        prefix = '/NeuroN-page';
-                    }
+                            $.ajax({ //Seconds Request
+                                url: prefix + '/templates/' + settings.template + '.html',
+                                success: function(html){
+                                    defaultHtml = html;
+                                }
+                            })
 
-                    var template = prefix + '/templates/' + settings.template + '.html';
-
-                    $.ajax(template, {
-                        success: function(template) {
-                            var html = Mustache.render(template, response);
+                        ).then(function() {
+                            var html = Mustache.render(defaultHtml, response, {
+                                content: contentHtml,
+                                news: newsHtml
+                            });
                             $('html, body').animate({
-                                scrollTop: $(selector).offset().top
+                                scrollTop: (scrollTop ? 0 : $(selector).offset().top)
                             }, 1000);
                             setTimeout(function() {
                                 $(selector).addClass("fadeIn");
@@ -67,7 +72,58 @@
                                 $(selector).html(html);
                                 after();
                             }, 500);
-                        }
+                        });
+                    }
+                });
+            });
+        } else {
+            $.ajax(settings.rootUrl + url, {
+                success: function(response) {
+                    response = parser(response);
+                    var prefix = '';
+                    if(window.location.host.indexOf('github') !== -1) {
+                        prefix = '/NeuroN-page';
+                    }
+
+                    var contentHtml;
+                    var newsHtml;
+                    var defaultHtml;
+                    $.when(
+                        $.ajax({ // First Request
+                            url: prefix + '/templates/default_content_template.html',
+                            success: function(html){
+                                contentHtml = html;
+                            }
+                        }),
+
+                        $.ajax({ //Seconds Request
+                            url: prefix + '/templates/default_news_template.html',
+                            success: function(html){
+                                newsHtml = html;
+                            }
+                        }),
+
+                        $.ajax({ //Seconds Request
+                            url: prefix + '/templates/' + settings.template + '.html',
+                            success: function(html){
+                                defaultHtml = html;
+                            }
+                        })
+
+                    ).then(function() {
+                        var html = Mustache.render(defaultHtml, response, {
+                            content: contentHtml,
+                            news: newsHtml
+                        });
+                        $('html, body').animate({
+                            scrollTop: (scrollTop ? 0 : $(selector).offset().top)
+                        }, 1000);
+                        setTimeout(function() {
+                            $(selector).addClass("fadeIn");
+                            $(selector).removeClass("fadeOut");
+                            $(selector).html(html);
+                            after();
+                        }, 500);
                     });
                 }
             });
