@@ -169,3 +169,15 @@ div#nav-background {
 .gradiented {
     background-color: rgba(0, 0, 0, 0.2);
 }
+
+.shadow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 10%;
+    -moz-box-shadow:    inset 0 0 1000px rgba(0,0,0,.5) !important;
+    -webkit-box-shadow: inset 0 0 1000px rgba(0,0,0,.5) !important;
+    box-shadow:         inset 0 0 1000px rgba(0,0,0,.5) !important;
+    top: 0;
+    left: 0;
+}
