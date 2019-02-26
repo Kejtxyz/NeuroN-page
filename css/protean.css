@@ -170,7 +170,20 @@ div#nav-background {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-.shadow {
+.shadow-left {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 10%;
+    margin-left: -25px;
+    -moz-box-shadow:    inset 0 0 1000px rgba(0,0,0,.5) !important;
+    -webkit-box-shadow: inset 0 0 1000px rgba(0,0,0,.5) !important;
+    box-shadow:         inset 0 0 1000px rgba(0,0,0,.5) !important;
+    top: 0;
+    left: 0;
+}
+
+.shadow-right {
     position: absolute;
     width: 350px;
     height: 350px;
@@ -179,5 +192,6 @@ div#nav-background {
     -webkit-box-shadow: inset 0 0 1000px rgba(0,0,0,.5) !important;
     box-shadow:         inset 0 0 1000px rgba(0,0,0,.5) !important;
     top: 0;
-    left: 0;
+    right: 0;
+    margin-right: -25px;
 }

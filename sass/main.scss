@@ -145,6 +145,7 @@ img#logo-main-nav {
 // header
 
 #main-header {
+    background-image: (linear-gradient(to right bottom, rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(../img/header-foto.jpg));
     background-size: cover;
     background-position: center;
     height: 528px;
@@ -478,6 +479,24 @@ div#copyright {
     }
 }
 
+@media all and (max-width: 540px) {
+
+    #headerCaptionButtonsWrapper {
+        display: block;
+
+        #likeButtonWrapper0 {
+            margin-top: 50px;
+        }
+
+        #gotoWrapper {
+            display: inline-block;
+            order: 1;
+            margin-left: 0;
+        }
+    }
+
+}
+
 @media all and (max-width: 425px) {
 
     li.nav-item.nav-link-style-d-sm-none {
@@ -504,23 +523,7 @@ div#copyright {
         img {
             height: 80px;
             margin: 30px 0 15px 0;
-        }
-
-        #headerCaptionButtonsWrapper {
-            display: block;
-
-            #likeButtonWrapper0 {
-                margin-top: 50px;
-            }
-
-            #gotoWrapper {
-                display: inline-block;
-                order: 1;
-                margin-left: 0;
-            }
-        }
-
-            
+        }      
         
     }
 
