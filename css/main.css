@@ -79,6 +79,7 @@ img#logo-main-nav {
     color: #dadada; }
 
 #main-header {
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../img/header-foto.jpg);
   background-size: cover;
   background-position: center;
   height: 528px;
@@ -290,6 +291,16 @@ div#copyright {
     border-bottom: none;
     width: 10%; } }
 
+@media all and (max-width: 540px) {
+  #headerCaptionButtonsWrapper {
+    display: block; }
+    #headerCaptionButtonsWrapper #likeButtonWrapper0 {
+      margin-top: 50px; }
+    #headerCaptionButtonsWrapper #gotoWrapper {
+      display: inline-block;
+      order: 1;
+      margin-left: 0; } }
+
 @media all and (max-width: 425px) {
   li.nav-item.nav-link-style-d-sm-none {
     margin-top: 12px; }
@@ -306,14 +317,6 @@ div#copyright {
     .header-caption img {
       height: 80px;
       margin: 30px 0 15px 0; }
-    .header-caption #headerCaptionButtonsWrapper {
-      display: block; }
-      .header-caption #headerCaptionButtonsWrapper #likeButtonWrapper0 {
-        margin-top: 50px; }
-      .header-caption #headerCaptionButtonsWrapper #gotoWrapper {
-        display: inline-block;
-        order: 1;
-        margin-left: 0; }
   .section-container .article-text {
     margin-top: 40px;
     margin-right: 0;
