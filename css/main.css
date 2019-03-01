@@ -93,7 +93,10 @@ img#logo-main-nav {
   z-index: 0; }
   .header-caption img {
     height: 130px;
-    margin: 40px 0 20px 0; }
+    margin: 15px 0 0 0; }
+  .header-caption p.logo-smart-caption {
+    font-size: 16px;
+    margin-bottom: 20px; }
   .header-caption .header-text-container {
     width: 50%; }
     .header-caption .header-text-container h1 {
@@ -261,8 +264,7 @@ div#copyright {
     .header-caption .header-text-container {
       width: 90%; }
     .header-caption img {
-      height: 100px;
-      margin: 40px 0 20px 0; }
+      margin: 40px 0 0 0; }
   .team-container {
     padding-left: 0;
     padding-right: 0;
@@ -325,8 +327,11 @@ div#copyright {
         font-size: 12px;
         margin-bottom: 15px; }
     .header-caption img {
-      height: 80px;
-      margin: 30px 0 15px 0; }
+      height: 100px;
+      margin: 30px 0 0 0; }
+    .header-caption p.logo-smart-caption {
+      font-size: 12px;
+      margin-bottom: 20px; }
   .section-container .article-text {
     margin-top: 40px;
     margin-right: 0;
