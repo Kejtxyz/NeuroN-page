@@ -42,7 +42,7 @@
         var $searchButton = $(settings.searchButtonSelector);
         $searchButton.css("pointer-events", "auto");
         $searchButton.removeClass("animated fadeOut d-none");
-        $searchButton.addClass("animated fadeIn");
+        //$searchButton.addClass("animated fadeIn");
     };
 
     var hidePrimaryMenu = function() {
