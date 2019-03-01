@@ -163,7 +163,11 @@ img#logo-main-nav {
 
     img {
         height: 130px;
-        margin: 40px 0 20px 0;
+        margin: 15px 0 0 0;
+    }
+    p.logo-smart-caption {
+        font-size: 16px;
+        margin-bottom: 20px;
     }
 
     .header-text-container {
@@ -433,9 +437,9 @@ div#copyright {
         }
 
         img {
-            height: 100px;
-            margin: 40px 0 20px 0;
+            margin: 40px 0 0 0;
         }
+
     }
 
     .team-container {
@@ -521,9 +525,14 @@ div#copyright {
         }
 
         img {
-            height: 80px;
-            margin: 30px 0 15px 0;
+            height: 100px;
+            margin: 30px 0 0 0;
         }      
+
+        p.logo-smart-caption {
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
         
     }
 
