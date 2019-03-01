@@ -13,11 +13,10 @@ function getElementData(element) {
     var bodyBoundingClientRect      = document.body.getBoundingClientRect();
     var elementBoundingClientRect   = element.getBoundingClientRect();
     var top                         = parseInt(elementBoundingClientRect.top - bodyBoundingClientRect.top);
-    var animateLeft                 = element.classList.contains('animate-left');
+
     return {
         element:            element,
         height:             height,
-        direction:          animateLeft ? 'left' : 'right',
         top:                top,
         rotation: {
             max: 10,
@@ -33,7 +32,7 @@ for(var i = 0; i < _elements.length; i++) {
     elements.push(getElementData(_elements[i]));
 }
 
-var rotate = function(element, forceAngle) {
+var rotate = function(element, direction, forceAngle) {
     // Used to reset element position on window resize
     if(typeof forceAngle !== "undefined") {
         element.element.style.transform = 'rotate(' + forceAngle + 'deg)';
@@ -47,7 +46,7 @@ var rotate = function(element, forceAngle) {
     var rotationFix         = 0.6*maximumLandingAngle;
     var currentLandingAngle = (-1 * ((currentAttitude * maximumLandingAngle) / landingAttitude)) + rotationFix;
 
-    if(element.direction === 'left') {
+    if(direction === 'left') {
         currentLandingAngle = -currentLandingAngle;
     }
 
@@ -56,7 +55,7 @@ var rotate = function(element, forceAngle) {
 
 var onScroll = function(e) {
    for(var i = 0; i < elements.length; i++) {
-       rotate(elements[i]);
+       rotate(elements[i], i % 2 === 0 ? 'right' : 'left');
    }
 };
 
@@ -66,7 +65,7 @@ if(disableOnSmallAndMediumDevices) {
             if (DEVICE.SIZE === DEVICE.DEVICE_SIZE_SMALL || DEVICE.SIZE === DEVICE.DEVICE_SIZE_MEDIUM) {
                 window.removeEventListener('scroll', onScroll);
                 for (var i = 0; i < elements.length; i++) {
-                    rotate(elements[i], 0);
+                    rotate(elements[i], i % 2 === 0 ? 'right' : 'left', 0);
                 }
             } else {
                 window.addEventListener('scroll', onScroll);
