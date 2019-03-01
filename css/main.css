@@ -131,13 +131,39 @@ img#logo-main-nav {
   overflow-y: hidden;
   position: relative;
   z-index: 1000; }
+  .section-container .get-icon-text {
+    border: solid 1px #393939;
+    text-align: center;
+    font-size: 14px;
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    left: 0; }
+    .section-container .get-icon-text:hover {
+      background-color: #151515; }
+    .section-container .get-icon-text a {
+      color: #393939; }
+      .section-container .get-icon-text a:hover {
+        text-decoration: none;
+        color: white; }
+    .section-container .get-icon-text p {
+      padding: 5px 8px 5px 0;
+      display: inline-block;
+      margin: 0; }
+      .section-container .get-icon-text p:hover {
+        color: white; }
+    .section-container .get-icon-text .get-icon {
+      font-size: 16px;
+      padding: 2px 2px 2px 5px; }
   .section-container .img-container {
     margin-top: 50px; }
-  .section-container img {
+  .section-container img.coaster {
     width: 350px;
     height: 350px;
     border-radius: 10%;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5); }
+  .section-container img.partners {
+    width: 95px;
+    height: auto; }
   .section-container .section-img-left {
     transform: rotate(15deg);
     margin-left: -25px; }
@@ -148,7 +174,14 @@ img#logo-main-nav {
   .section-container .article-text {
     width: 60%;
     padding: 120px 200px 120px 200px; }
-    .section-container .article-text h4 {
+    .section-container .article-text .title-logo-wrapper {
+      margin-bottom: 1.5rem; }
+      .section-container .article-text .title-logo-wrapper h4 {
+        color: #0e196e;
+        display: inline-block;
+        width: 80%;
+        vertical-align: bottom; }
+    .section-container .article-text h4.section-title-style {
       margin-bottom: 1.5rem;
       color: #0e196e; }
     .section-container .article-text p {
@@ -354,7 +387,7 @@ div#copyright {
     width: 75vw;
     height: 75vw;
     right: 12%; }
-  .section-container img {
+  .section-container img.coaster {
     width: 75vw;
     height: 75vw; }
   .section-container .section-img-right {
