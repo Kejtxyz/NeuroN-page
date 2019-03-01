@@ -46,7 +46,29 @@ function loadNewNeuronDirectionContent() {
 }
 
 function loadOakesInnovateContent() {
-    loadDefault();
+    $(document).contentLoader(
+        config,
+        '/api/tab/neuron_foundation',
+        'oakes_innovate_template',
+        '#main',
+        function(response) {
+            $.each(response.articles, function(index) {
+                this.isEven = (index % 2 === 0);
+                this.index  = (index+1);
+            });
+            $.each(response.news, function(index) {
+                this.isEven         = (index % 2 === 0);
+            });
+
+            return {
+                articles:   response.articles,
+                news:       response.news
+            };
+        },
+        function() {
+            $('<script src="js/magicRotator.js"><\/script>').appendTo(document.body);
+        }
+    );
     return false;
 }
 
@@ -63,6 +85,34 @@ function loadOakesClinicContent() {
 function loadOakAtlantisContent() {
     loadDefault();
     return false;
+}
+
+function loadDownloadContent() {
+    $(document).contentLoader(
+        config,
+        '/api/tab/neuron_foundation',
+        'download_template',
+        '#main',
+        function(response) {
+            $.each(response.articles, function(index) {
+                this.isEven = (index % 2 === 0);
+                this.index  = (index+1);
+            });
+            $.each(response.news, function(index) {
+                this.isEven         = (index % 2 === 0);
+            });
+
+            return {
+                articles:   response.articles,
+                news:       response.news
+            };
+        },
+        function() {
+            $('<script src="js/magicRotator.js"><\/script>').appendTo(document.body);
+        }
+    );
+    return false;
+
 }
 
 function loadContactContent() {
@@ -177,3 +227,4 @@ $(document).on('click', '[data-content_loader="oakes_clinic"]', loadOakesClinicC
 $(document).on('click', '[data-content_loader="oak_atlantis"]', loadOakAtlantisContent);
 $(document).on('click', '[data-content_loader="about_us"]', loadAboutUsContent);
 $(document).on('click', '[data-content_loader="contact"]', loadContactContent);
+$(document).on('click', '[data-content_loader="download"]', loadDownloadContent);
