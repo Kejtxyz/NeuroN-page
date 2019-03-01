@@ -9,14 +9,38 @@
             </div>
         </div>
         <div class="col-lg-8 col-sm-6 article-text d-md-block">
-                <h4 class="section-title-style">{{title}}</h4>
-                <p>{{content}}</p>
+            <div class="title-logo-wrapper">
+                <h4>{{title}}</h4>
+                <img class="partners" src="../img/Attendo.png">
+            </div>
+            <p>{{content}}</p>
+            <div class="get-icon-text">
+                <a href="#">
+                    <em class="get-icon icon-download"></em>
+                <p>POBIERZ</p>
+            </a>
+            </div>
+            <div class="get-icon-text">
+                <a href="#">
+                    <em class="get-icon icon-download"></em>
+                <p>POBIERZ WTYCZKĘ</p>
+            </a>
+            </div>
+            <div class="get-icon-text">
+                <a href="#">
+                    <em class="get-icon icon-doc"></em>
+                <p>POKAŻ WIĘCEJ</p>
+            </a>
+            </div>
         </div>
         {{/isEven}}
 
         {{^isEven}}
         <div class="col-lg-8 col-sm-6 article-text d-md-block order-2 order-md-1">
-            <h4 class="section-title-style">{{title}}</h4>
+            <div class="title-logo-wrapper">
+                <h4>{{title}}</h4>
+                <img class="partners" src="../img/Attendo.png">
+            </div>
             <p>{{content}}</p>
         </div>
         <div class="col-lg-4 col-sm-6 order-1 text-md-right order-md-2" id="section-container-img-{{index}}">

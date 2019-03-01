@@ -228,15 +228,58 @@ img#logo-main-nav {
     position: relative;
     z-index: 1000;
 
+
+    .get-icon-text {
+        border: solid 1px $text-color;
+        text-align: center;
+        font-size: 14px;
+        display: inline-block;
+        margin: 5px 5px 0 0;
+        left: 0;
+
+        &:hover {
+            background-color: $secondary-dark-color;
+        }
+
+        a {
+            color: $text-color;
+
+            &:hover {
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+        p {
+            padding: 5px 8px 5px 0;
+            display: inline-block;
+            margin: 0;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        .get-icon {
+            font-size: 16px;
+            padding: 2px 2px 2px 5px;
+        }
+    }
+
     .img-container {
         margin-top: 50px;
     }
 
-    img {
+    img.coaster {
         width: 350px;
         height: 350px;
         border-radius: 10%;
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+    }
+
+    img.partners {
+        width: 95px;
+        height: auto;
     }
 
     .section-img-left {
@@ -252,13 +295,25 @@ img#logo-main-nav {
 
     .article-text {
         width: 60%;
-
         padding: 120px 200px 120px 200px;
 
-        h4 {
+        .title-logo-wrapper {
+            margin-bottom: 1.5rem;
+            
+
+           h4 {
+            // margin-bottom: 1.5rem;
+            color: $logo-dark-color;
+            display: inline-block;
+            width: 80%;
+            vertical-align: bottom;
+            }
+        }
+
+        h4.section-title-style {
             margin-bottom: 1.5rem;
             color: $logo-dark-color;
-        }
+            }
 
         p {
             color: $text-color;
@@ -588,7 +643,7 @@ div#copyright {
             right: 12%;
         }
 
-        img {
+        img.coaster {
             width: 75vw;
             height: 75vw;
         }
