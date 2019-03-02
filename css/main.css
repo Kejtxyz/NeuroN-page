@@ -396,6 +396,12 @@ div#copyright {
 .rotatable {
   will-change: transform, rotate; }
 
+.rotatable > div {
+  will-change: transform, rotate; }
+
+.rotatable > img {
+  will-change: transform, rotate; }
+
 #main {
   z-index: 50; }
 
