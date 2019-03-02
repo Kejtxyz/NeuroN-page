@@ -55,7 +55,7 @@ var rotate = function(element, direction, forceAngle) {
 
 var onScroll = function(e) {
    for(var i = 0; i < elements.length; i++) {
-       rotate(elements[i], i % 2 === 0 ? 'right' : 'left');
+       rotate(elements[i], i % 2 === 0 ? 'left' : 'right');
    }
 };
 
@@ -65,7 +65,7 @@ if(disableOnSmallAndMediumDevices) {
             if (DEVICE.SIZE === DEVICE.DEVICE_SIZE_SMALL || DEVICE.SIZE === DEVICE.DEVICE_SIZE_MEDIUM) {
                 window.removeEventListener('scroll', onScroll);
                 for (var i = 0; i < elements.length; i++) {
-                    rotate(elements[i], i % 2 === 0 ? 'right' : 'left', 0);
+                    rotate(elements[i], i % 2 === 0 ? 'left' : 'right', 0);
                 }
             } else {
                 window.addEventListener('scroll', onScroll);
