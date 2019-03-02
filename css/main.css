@@ -94,7 +94,7 @@ img#logo-main-nav {
   color: white;
   position: fixed;
   left: 100px;
-  top: 120px;
+  top: 90px;
   z-index: 0; }
   .header-caption img {
     height: 150px;
@@ -269,6 +269,13 @@ div#copyright {
       font-size: 1em;
       text-align: center;
       margin-bottom: 5px; }
+
+.privacy {
+  float: right; }
+
+@media (max-width: 1200px) {
+  .header-caption {
+    top: 120px; } }
 
 @media all and (max-width: 992px) {
   .to-hide {

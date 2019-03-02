@@ -166,7 +166,7 @@ img#logo-main-nav {
     color: white;
     position: fixed;
     left: 100px; 
-    top: 120px;
+    top: 90px;
     z-index: 0;
     
 
@@ -447,6 +447,16 @@ div#copyright {
             }
 
         }
+}
+
+.privacy {
+    float: right;
+}
+
+@media (max-width: 1200px) {
+    .header-caption { 
+        top: 120px;
+    }
 }
 
 
