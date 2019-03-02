@@ -26,7 +26,9 @@ $logo-light-color: #2a80f8;
 
 body {
     font-family: 'Muli', sans-serif;
-    font-size: 13px;
+    // font-family: 'Source Sans Pro', sans-serif;
+    // font-family: 'M PLUS 1p', sans-serif;
+    font-size: 13.5px;
 }
 
 
@@ -50,7 +52,7 @@ body {
     }
 
     .margin-top-style {
-        margin-top: 4px;
+        margin-top: 2px;
     }
 
     .dropdown-menu {
@@ -90,14 +92,20 @@ img#logo-main-nav {
 .navbar-expand-lg .navbar-nav .nav2-link-style {
     padding-right: 1.25rem !important;
     padding-left: 1.25rem !important;
-    padding-bottom: 1rem;
+    padding-bottom: 11px !important ;
+    padding-top: 9px !important;
     border-bottom: solid 2px $secondary-dark-color;
 
     &:hover { 
         border-bottom: solid 2px $logo-light-color;
     }
+
 }
-    
+
+
+#collapsibleNavbar2 > ul > li > a {
+    padding: 8px;
+}
 .nav2-title {
     margin: 5px;
 }
@@ -119,6 +127,7 @@ img#logo-main-nav {
 #nav2 {
     background-color: $secondary-dark-color;
     padding-bottom: 0;
+    padding-top: 2px;
 
     .nav2-container-style {
         @include nav2-row-style;
@@ -145,7 +154,7 @@ img#logo-main-nav {
 // header
 
 #main-header {
-    background-image: (linear-gradient(to right bottom, rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(../img/header-foto.jpg));
+    background-image: url(../img/header-foto.jpg);
     background-size: cover;
     background-position: center;
     height: 528px;
@@ -162,12 +171,13 @@ img#logo-main-nav {
     
 
     img {
-        height: 130px;
+        height: 150px;
         margin: 15px 0 0 0;
     }
     p.logo-smart-caption {
-        font-size: 16px;
+        font-size: 13px;
         margin-bottom: 20px;
+        letter-spacing: 3px;
     }
 
     .header-text-container {
@@ -493,7 +503,7 @@ div#copyright {
         }
 
         img {
-            margin: 40px 0 0 0;
+            margin: 0;
         }
 
     }
@@ -515,18 +525,6 @@ div#copyright {
             margin-right: 0;
             margin-left: 0;
             width: 100%;
-        }
-
-        .shadow-left {
-            transform: rotate(0);
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .shadow-right {
-            transform: rotate(0);
-            margin-left: auto;
-            margin-right: 0;
         }
 
 
@@ -553,6 +551,14 @@ div#copyright {
     }
 }
 
+.footer-padding {
+    padding: 0 25px 0 25px;
+}
+
+.footer-apps-wrapper {
+    padding-right: 15px;
+}
+
 @media all and (max-width: 540px) {
 
     a.nav-link.margin-top-style.rwd-margin {
@@ -562,7 +568,7 @@ div#copyright {
         display: block;
 
         #likeButtonWrapper0 {
-            margin-top: 50px;
+            margin-top: 45px;
         }
 
         #gotoWrapper {
@@ -598,12 +604,12 @@ div#copyright {
         }
 
         img {
-            height: 100px;
-            margin: 30px 0 0 0;
+            height: 130px;
+            margin: 0;
         }      
 
         p.logo-smart-caption {
-            font-size: 12px;
+            font-size: 11px;
             margin-bottom: 20px;
         }
         
@@ -631,17 +637,6 @@ div#copyright {
             margin-top: 40px;
         }
 
-        .shadow-left {
-            width: 75vw;
-            height: 75vw;
-            right: 0;
-        }
-
-        .shadow-right {
-            width: 75vw;
-            height: 75vw;
-            right: 12%;
-        }
 
         img.coaster {
             width: 75vw;
