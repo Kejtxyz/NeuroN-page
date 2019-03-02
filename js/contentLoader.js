@@ -3,7 +3,22 @@ var config = {
     fallbackUrl:    'http://localhost:8095'
 };
 
+function handleMobile() {
+    var isLeftMenuOpen  = $('#collapsibleNavbar').hasClass('show');
+    var isRightMenuOpen = $('#collapsibleNavbar2').hasClass('show');
+
+    if(isLeftMenuOpen) {
+        $('#left-toggler').click();
+    }
+
+    if(isRightMenuOpen) {
+        $('#right-toggler').click();
+    }
+}
+
 function loadDefault() {
+    handleMobile();
+
     $(document).contentLoader(
         config,
         '/api/tab/neuron_foundation',
@@ -46,6 +61,7 @@ function loadNewNeuronDirectionContent() {
 }
 
 function loadOakesInnovateContent() {
+    handleMobile();
     $(document).contentLoader(
         config,
         '/api/tab/neuron_foundation',
@@ -88,6 +104,7 @@ function loadOakAtlantisContent() {
 }
 
 function loadDownloadContent() {
+    handleMobile();
     $(document).contentLoader(
         config,
         '/api/tab/neuron_foundation',
@@ -116,6 +133,7 @@ function loadDownloadContent() {
 }
 
 function loadContactContent() {
+    handleMobile();
     $(document).contentLoader(
         config,
         '/api/tab/about_us',
@@ -201,6 +219,7 @@ function loadContactContent() {
 }
 
 function loadAboutUsContent() {
+    handleMobile();
     $(document).contentLoader(
         config,
         '/api/tab/about_us',
