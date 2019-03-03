@@ -25,10 +25,10 @@ $logo-light-color: #2a80f8;
 }
 
 body {
-    font-family: 'Muli', sans-serif;
+    // font-family: 'Muli', sans-serif;
     // font-family: 'Source Sans Pro', sans-serif;
     // font-family: 'M PLUS 1p', sans-serif;
-    font-size: 13.5px;
+    font-size: 13px;
 }
 
 
@@ -174,10 +174,18 @@ img#logo-main-nav {
         height: 150px;
         margin: 15px 0 0 0;
     }
-    p.logo-smart-caption {
-        font-size: 13px;
-        margin-bottom: 20px;
+    p.logo-smart-caption1 {
+        margin-top: 15px;
+        font-size: 30px;
         letter-spacing: 3px;
+        line-height: 5px;
+    }
+
+    p.logo-smart-caption2 {
+        font-size: 12px;
+        margin-bottom: 15px;
+        letter-spacing: 18.5px;
+        margin-top: 0;
     }
 
     .header-text-container {
@@ -185,7 +193,8 @@ img#logo-main-nav {
 
         h1 {
             font-size: 3.5em;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            font-weight: 400;
         }
 
         .header-icon {
@@ -454,6 +463,7 @@ div#copyright {
 }
 
 @media (max-width: 1200px) {
+
     .header-caption { 
         top: 120px;
     }
@@ -516,6 +526,10 @@ div#copyright {
             margin: 0;
         }
 
+        p {
+            width: 90%;
+        }
+
     }
 
     .team-container {
@@ -574,6 +588,7 @@ div#copyright {
     a.nav-link.margin-top-style.rwd-margin {
         margin-top: 12px;
     } 
+
     #headerCaptionButtonsWrapper {
         display: block;
 
@@ -599,8 +614,24 @@ div#copyright {
      .header-caption {
         left: 20px; 
 
+        p.logo-smart-caption1 {
+            margin-top: 8px;
+            font-size: 27px;
+            letter-spacing: 2px;
+            line-height: 5px;
+        }
+    
+        p.logo-smart-caption2 {
+            font-size: 10px;
+            margin-bottom: 10px;
+            letter-spacing: 16.5px;
+            margin-top: 0;
+        }
+
         .header-text-container {
-            width: 90%;
+            width: 80%;
+
+
 
             h1 {
                 font-size: 30px;
@@ -611,6 +642,8 @@ div#copyright {
                 font-size: 12px;
                 margin-bottom: 15px;
             }
+
+
         }
 
         img {
@@ -618,10 +651,10 @@ div#copyright {
             margin: 0;
         }      
 
-        p.logo-smart-caption {
-            font-size: 11px;
-            margin-bottom: 20px;
-        }
+        // p.logo-smart-caption {
+        //     font-size: 11px;
+        //     margin-bottom: 20px;
+        // }
         
     }
 

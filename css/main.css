@@ -4,8 +4,7 @@
   box-sizing: border-box; }
 
 body {
-  font-family: 'Muli', sans-serif;
-  font-size: 13.5px; }
+  font-size: 13px; }
 
 .navbar-dark .navbar-nav .nav-link {
   color: #dadada; }
@@ -99,15 +98,22 @@ img#logo-main-nav {
   .header-caption img {
     height: 150px;
     margin: 15px 0 0 0; }
-  .header-caption p.logo-smart-caption {
-    font-size: 13px;
-    margin-bottom: 20px;
-    letter-spacing: 3px; }
+  .header-caption p.logo-smart-caption1 {
+    margin-top: 15px;
+    font-size: 30px;
+    letter-spacing: 3px;
+    line-height: 5px; }
+  .header-caption p.logo-smart-caption2 {
+    font-size: 12px;
+    margin-bottom: 15px;
+    letter-spacing: 18.5px;
+    margin-top: 0; }
   .header-caption .header-text-container {
     width: 50%; }
     .header-caption .header-text-container h1 {
       font-size: 3.5em;
-      margin-bottom: 25px; }
+      margin-bottom: 20px;
+      font-weight: 400; }
     .header-caption .header-text-container .header-icon {
       color: white;
       padding: 2px;
@@ -311,6 +317,8 @@ div#copyright {
       width: 90%; }
     .header-caption img {
       margin: 0; }
+    .header-caption p {
+      width: 90%; }
   .team-container {
     padding-left: 0;
     padding-right: 0;
@@ -362,8 +370,18 @@ div#copyright {
     margin-top: 12px; }
   .header-caption {
     left: 20px; }
+    .header-caption p.logo-smart-caption1 {
+      margin-top: 8px;
+      font-size: 27px;
+      letter-spacing: 2px;
+      line-height: 5px; }
+    .header-caption p.logo-smart-caption2 {
+      font-size: 10px;
+      margin-bottom: 10px;
+      letter-spacing: 16.5px;
+      margin-top: 0; }
     .header-caption .header-text-container {
-      width: 90%; }
+      width: 80%; }
       .header-caption .header-text-container h1 {
         font-size: 30px;
         margin-bottom: 15px; }
@@ -373,9 +391,6 @@ div#copyright {
     .header-caption img {
       height: 130px;
       margin: 0; }
-    .header-caption p.logo-smart-caption {
-      font-size: 11px;
-      margin-bottom: 20px; }
   .section-container .article-text {
     margin-top: 40px;
     margin-right: 0;
