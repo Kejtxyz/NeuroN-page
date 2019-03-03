@@ -206,11 +206,6 @@ function loadContactContent() {
                 ],
                 contacts: [
                     {
-                        name:   'Media i współpraca',
-                        email:  'biuro@smartoakproject.com',
-                        phone:  '+48 889 222 988‬'
-                    },
-                    {
                         name:   'NeuroN Foundation',
                         email:  'biuro@neuronfoundation.com',
                         phone:  '+48 514 438 369‬‬'
@@ -244,6 +239,11 @@ function loadContactContent() {
                         name:   'Oak Atlantis',
                         email:  'biuro@oakisland.com',
                         phone:  '+48 889 222 988'
+                    },
+                    {
+                        name:   'Media i współpraca',
+                        email:  'biuro@smartoakproject.com',
+                        phone:  '+48 889 222 988‬'
                     },
                     {
                         name:   'Pomoc techniczna',
