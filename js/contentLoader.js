@@ -171,11 +171,141 @@ function loadContactContent() {
                         text: "Oak Atlantis"
                     }
                 ],
+				 projects2: [
+                    {
+                        code: "Białystok",
+                        text: "Białystok"
+                    },
+                    {
+                        code: "Bydgoszcz",
+                        text: "Bydgoszcz"
+                    },
+                    {
+                        code: "Częstochowa",
+                        text: "Częstochowa"
+                    },
+                    {
+                        code: "Gdańsk",
+                        text: "Gdańsk"
+                    },
+                    {
+                        code: "Katowice",
+                        text: "Katowice"
+                    },
+                    {
+                        code: "Kielce",
+                        text: "Kielce"
+                    },
+                    {
+                        code: "Kraków",
+                        text: "Kraków"
+                    },
+					{
+                        code: "Lublin",
+                        text: "Lublin"
+                    },
+                    {
+                        code: "Łódź",
+                        text: "Łódź"
+                    },
+                    {
+                        code: "Olsztyn",
+                        text: "Olsztyn"
+                    },
+                    {
+                        code: "Poznań",
+                        text: "Poznań"
+                    },
+                    {
+                        code: "Rzeszów",
+                        text: "Rzeszów"
+                    },
+                    {
+                        code: "Szczecin",
+                        text: "Szczecin"
+                    },
+					{
+                        code: "Toruń",
+                        text: "Toruń"
+                    },
+                    {
+                        code: "Warszawa",
+                        text: "Warszawa"
+                    },
+                    {
+                        code: "Wrocław",
+                        text: "Wrocław"
+                    }
+                ],
+				 projects3: [
+                    {
+                        code: "Attendo",
+                        text: "Attendo"
+                    },
+                    {
+                        code: "Powers",
+                        text: "Powers"
+                    },
+                    {
+                        code: "Sanum",
+                        text: "Sanum"
+                    },
+                    {
+                        code: "Silva",
+                        text: "Silva"
+                    },
+                    {
+                        code: "Manus",
+                        text: "Manus"
+                    },
+                    {
+                        code: "Medicor",
+                        text: "Medicor"
+                    },
+                    {
+                        code: "Specto",
+                        text: "Specto"
+                    },
+					{
+                        code: "Black Oak",
+                        text: "Black Oak"
+                    },
+                    {
+                        code: "Fero",
+                        text: "Fero"
+                    },
+                    {
+                        code: "Melior",
+                        text: "Melior"
+                    },
+                    {
+                        code: "Ambient",
+                        text: "Ambient"
+                    },
+                    {
+                        code: "Abyss",
+                        text: "Abyss"
+                    },
+                    {
+                        code: "BIOcream",
+                        text: "BIOcream"
+                    },
+                    {
+                        code: "Just Juice",
+                        text: "Just Juice"
+                    },
+
+                ],
                 contacts: [
+                    {
+                        name:   'Media i współpraca',
+                        email:  'biuro@smartoakproject.com',
+                        phone:  '+48 889 222 988‬'
+                    },
                     {
                         name:   'NeuroN Foundation',
                         email:  'biuro@neuronfoundation.com',
-                        phone:  '‭+48 514 438 369‬'
+                        phone:  '+48 514 438 369‬‬'
                     },
                     {
                         name:   'New Neuropsychiatry',
@@ -190,22 +320,27 @@ function loadContactContent() {
                     {
                         name:   'Oakes Innovate',
                         email:  'biuro@oakesinnovate.com',
-                        phone:  '+48 889 222 988'
+                        phone:  '‭+48 889 222 988‬'
                     },
                     {
                         name:   'NTV Channel',
                         email:  'biuro@ntv.com',
-                        phone:  '‭+48 514 438 369‬'
+                        phone:  '+48 514 438 369‬‬'
                     },
                     {
                         name:   'Oakes Clinic',
                         email:  'biuro@oakesclinic.com',
-                        phone:  '+48 889 222 988‬'
+                        phone:  '+48 889 222 988'
                     },
-                    {
+					{
                         name:   'Oak Atlantis',
                         email:  'biuro@oakisland.com',
-                        phone:  '+48 889 222 988‬'
+                        phone:  '+48 889 222 988'
+                    },
+                    { 
+                        name:   'Pomoc techniczna',
+                        email:  'pomoc@smartoakproject.com',
+                        phone:  '+48 516 003 690'
                     }
                 ]
             };
