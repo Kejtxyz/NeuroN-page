@@ -19,7 +19,17 @@
                 <div class="form-group">
                     <select class="form-control" name="project">
                         <option value="">Wybierz projekt</option>
-                        {{#projects}}
+						<optgroup label="NEURON FOUNDATION">
+							{{#projects2}}
+                            <option value="{{code}}">{{text}}</option>
+							{{/projects2}}
+						</optgroup>
+						<optgroup label="OAKES INNOVATE">
+							{{#projects3}}
+                            <option value="{{code}}">{{text}}</option>
+							{{/projects3}}
+						</optgroup>
+						{{#projects}}
                             <option value="{{code}}">{{text}}</option>
                         {{/projects}}
                     </select>
