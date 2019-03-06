@@ -362,15 +362,7 @@ div#copyright {
 
 @media all and (max-width: 540px) {
   a.nav-link.margin-top-style.rwd-margin {
-    margin-top: 12px; }
-  #headerCaptionButtonsWrapper {
-    display: block; }
-    #headerCaptionButtonsWrapper #likeButtonWrapper0 {
-      margin-top: 45px; }
-    #headerCaptionButtonsWrapper #gotoWrapper {
-      display: inline-block;
-      order: 1;
-      margin-left: 0; } }
+    margin-top: 12px; } }
 
 @media all and (max-width: 425px) {
   li.nav-item.nav-link-style-d-sm-none {

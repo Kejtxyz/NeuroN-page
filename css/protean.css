@@ -137,40 +137,7 @@ div#nav-background {
     border-bottom: solid 2px #2a80f8 !important;
 }
 
-/* Damn absolutes */
-
-#framewrapper {
-    opacity: 0.01;
-}
-
-#likeButtonWrapper0 {
-    position: absolute;
-    height: 32px;
-    width: 190px;
-}
-
-#likeButtonWrapper {
-    font-size: 14px;
-    pointer-events: none;
-    touch-action: none;
-    /* width: 200px; */
-}
-#framewrapper, #likeButtonWrapper {
-    position: absolute;
-}
-
-#gotoWrapper {
-    font-size: 14px;
-    margin-left: 225px;
-}
-
-
-#headerCaptionButtonsWrapper {
-    width: 450px;
-    height: auto;
-}
-
-.gradiented {
+ .gradiented {
     background-color: rgba(0, 0, 0, 0.2);
     cursor: hand;
 }
