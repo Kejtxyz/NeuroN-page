@@ -131,6 +131,9 @@ img#logo-main-nav {
     .header-caption .header-text-container .header-icon-text {
       border: solid 1px white;
       display: inline-block; }
+      .header-caption .header-text-container .header-icon-text:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+        cursor: pointer; }
       .header-caption .header-text-container .header-icon-text p {
         padding: 5px;
         display: inline;
@@ -157,8 +160,7 @@ img#logo-main-nav {
     margin: 5px 5px 0 0;
     left: 0; }
     .section-container .get-icon-text:hover {
-      background-color: #151515;
-      color: white; }
+      background-color: #151515; }
     .section-container .get-icon-text a {
       color: #393939; }
       .section-container .get-icon-text a:hover {
@@ -285,6 +287,9 @@ div#copyright {
 
 .privacy {
   float: right; }
+
+.gradiented {
+  color: white; }
 
 @media (max-width: 1200px) {
   .header-caption {

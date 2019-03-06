@@ -137,10 +137,6 @@ div#nav-background {
     border-bottom: solid 2px #2a80f8 !important;
 }
 
- .gradiented {
-    background-color: rgba(0, 0, 0, 0.2);
-    cursor: hand;
-}
 
 textarea#how-can-we-help {
     height: 235px !important;

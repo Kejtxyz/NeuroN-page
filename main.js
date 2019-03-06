@@ -39,9 +39,11 @@ $(document).ready(function() {
 
 });
 
-$('.btn-wrapper').mouseenter(function() {
-    $(this).addClass('gradiented');
-});
-$('.btn-wrapper').mouseleave(function() {
-    $(this).removeClass('gradiented');
-});
+// $('div.get-icon-text').mouseenter(function() {
+//     $('i.get-icon').addClass('gradiented');
+//     $('p.get-p').addClass('gradiented');
+// });
+// $('div.get-icon-text').mouseleave(function() {
+//     $('i.get-icon').removeClass('gradiented');
+//     $('p.get-p').removeClass('gradiented');
+// });

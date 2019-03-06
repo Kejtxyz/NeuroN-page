@@ -223,6 +223,12 @@ img#logo-main-nav {
         .header-icon-text {
             border: solid 1px white;
             display: inline-block;
+            
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+            }
+            
 
             p {
                 padding: 5px;
@@ -266,7 +272,6 @@ img#logo-main-nav {
 
         &:hover {
             background-color: $secondary-dark-color;
-            color:white;
         }
 
         a {
@@ -471,6 +476,11 @@ div#copyright {
     float: right;
 }
 
+
+.gradiented {
+    color: white;
+} 
+
 @media (max-width: 1200px) {
 
     .header-caption { 
@@ -591,6 +601,7 @@ div#copyright {
 .footer-apps-wrapper {
     padding-right: 15px;
 }
+
 
 @media all and (max-width: 540px) {
 
