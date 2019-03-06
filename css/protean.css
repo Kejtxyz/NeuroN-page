@@ -137,38 +137,6 @@ div#nav-background {
     border-bottom: solid 2px #2a80f8 !important;
 }
 
-/* Damn absolutes */
-
-#framewrapper {
-    opacity: 0.01;
-}
-
-#likeButtonWrapper0 {
-    position: absolute;
-    height: 32px;
-    width: 108px;
-}
-
-#likeButtonWrapper {
-    font-size: 14px;
-    pointer-events: none;
-    touch-action: none;
-}
-#framewrapper, #likeButtonWrapper {
-    position: absolute;
-}
-
-#gotoWrapper {
-    font-size: 14px;
-    margin-left: 125px;
-}
-
-
-#headerCaptionButtonsWrapper {
-    width: 320px;
-    height: auto;
-}
-
 .gradiented {
     background-color: rgba(0, 0, 0, 0.2);
 }
