@@ -25,10 +25,9 @@ $logo-light-color: #2a80f8;
 }
 
 body {
-    // font-family: 'Muli', sans-serif;
-    // font-family: 'Source Sans Pro', sans-serif;
-    // font-family: 'M PLUS 1p', sans-serif;
+    font-family: 'Muli', sans-serif;
     font-size: 13px;
+    font-weight: 300;
 }
 
 
@@ -36,7 +35,7 @@ body {
     color: $primary-light-color;
 
     i {
-        font-size: 13px;
+        font-size: 12px;
     }
 }
 
@@ -47,12 +46,16 @@ body {
     .nav-link-style {
         i {
             margin: 15px;
-            font-size: 13px;
+            font-size: 12px;
         }
     }
 
     .margin-top-style {
         margin-top: 2px;
+    }
+
+    .smaller-icon {
+        font-size: 11.5px;
     }
 
     .dropdown-menu {
@@ -168,39 +171,42 @@ img#logo-main-nav {
     left: 100px; 
     top: 90px;
     z-index: 0;
+    font-weight: 400;
     
 
     img {
         height: 150px;
         margin: 15px 0 0 0;
     }
+
     p.logo-smart-caption1 {
         margin-top: 15px;
         font-size: 30px;
         letter-spacing: 3px;
         line-height: 5px;
+        font-weight: bold;
     }
 
     p.logo-smart-caption2 {
         font-size: 12px;
         margin-bottom: 15px;
-        letter-spacing: 18.5px;
+        letter-spacing: 20px;
         margin-top: 0;
     }
 
     .header-text-container {
-        width: 50%;
+        width: 70%;
 
         h1 {
             font-size: 3.5em;
             margin-bottom: 20px;
-            font-weight: 400;
+            // font-weight: bold;
         }
 
         .header-icon {
             color: white;
             padding: 2px;
-            font-size: 20px;
+            font-size: 18px;
             vertical-align: middle;
         }
 
@@ -213,6 +219,7 @@ img#logo-main-nav {
             display: inline-block;
 
         }
+        
         .header-icon-text {
             border: solid 1px white;
             display: inline-block;
@@ -225,12 +232,8 @@ img#logo-main-nav {
 
             a {
                 text-decoration: none;
+                color: white;
             }
-
-            .fb-like-p {
-                padding-left: 0;
-            }
-
 
         }
     }
@@ -246,7 +249,11 @@ img#logo-main-nav {
     overflow-y: hidden;
     position: relative;
     z-index: 1000;
+    
 
+    h4 {
+    font-weight: 300;
+    }
 
     .get-icon-text {
         border: solid 1px $text-color;
@@ -255,9 +262,11 @@ img#logo-main-nav {
         display: inline-block;
         margin: 5px 5px 0 0;
         left: 0;
+        
 
         &:hover {
             background-color: $secondary-dark-color;
+            color:white;
         }
 
         a {
@@ -622,7 +631,7 @@ div#copyright {
         }
     
         p.logo-smart-caption2 {
-            font-size: 10px;
+            font-size: 12.5px;
             margin-bottom: 10px;
             letter-spacing: 16.5px;
             margin-top: 0;

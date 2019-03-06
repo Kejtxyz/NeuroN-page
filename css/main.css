@@ -4,21 +4,25 @@
   box-sizing: border-box; }
 
 body {
-  font-size: 13px; }
+  font-family: 'Muli', sans-serif;
+  font-size: 13px;
+  font-weight: 300; }
 
 .navbar-dark .navbar-nav .nav-link {
   color: #dadada; }
   .navbar-dark .navbar-nav .nav-link i {
-    font-size: 13px; }
+    font-size: 12px; }
 
 .main-nav1 {
   background-color: #0e0e0e;
   overflow-y: hidden; }
   .main-nav1 .nav-link-style i {
     margin: 15px;
-    font-size: 13px; }
+    font-size: 12px; }
   .main-nav1 .margin-top-style {
     margin-top: 2px; }
+  .main-nav1 .smaller-icon {
+    font-size: 11.5px; }
   .main-nav1 .dropdown-menu {
     min-width: 1rem;
     background-color: #0e0e0e;
@@ -94,7 +98,8 @@ img#logo-main-nav {
   position: fixed;
   left: 100px;
   top: 90px;
-  z-index: 0; }
+  z-index: 0;
+  font-weight: 400; }
   .header-caption img {
     height: 150px;
     margin: 15px 0 0 0; }
@@ -102,22 +107,22 @@ img#logo-main-nav {
     margin-top: 15px;
     font-size: 30px;
     letter-spacing: 3px;
-    line-height: 5px; }
+    line-height: 5px;
+    font-weight: bold; }
   .header-caption p.logo-smart-caption2 {
     font-size: 12px;
     margin-bottom: 15px;
-    letter-spacing: 18.5px;
+    letter-spacing: 20px;
     margin-top: 0; }
   .header-caption .header-text-container {
-    width: 50%; }
+    width: 70%; }
     .header-caption .header-text-container h1 {
       font-size: 3.5em;
-      margin-bottom: 20px;
-      font-weight: 400; }
+      margin-bottom: 20px; }
     .header-caption .header-text-container .header-icon {
       color: white;
       padding: 2px;
-      font-size: 20px;
+      font-size: 18px;
       vertical-align: middle; }
     .header-caption .header-text-container .wrapper-margin {
       margin-right: 15px; }
@@ -131,9 +136,8 @@ img#logo-main-nav {
         display: inline;
         vertical-align: middle; }
       .header-caption .header-text-container .header-icon-text a {
-        text-decoration: none; }
-      .header-caption .header-text-container .header-icon-text .fb-like-p {
-        padding-left: 0; }
+        text-decoration: none;
+        color: white; }
 
 .section-container {
   padding-top: 50px;
@@ -143,6 +147,8 @@ img#logo-main-nav {
   overflow-y: hidden;
   position: relative;
   z-index: 1000; }
+  .section-container h4 {
+    font-weight: 300; }
   .section-container .get-icon-text {
     border: solid 1px #393939;
     text-align: center;
@@ -151,7 +157,8 @@ img#logo-main-nav {
     margin: 5px 5px 0 0;
     left: 0; }
     .section-container .get-icon-text:hover {
-      background-color: #151515; }
+      background-color: #151515;
+      color: white; }
     .section-container .get-icon-text a {
       color: #393939; }
       .section-container .get-icon-text a:hover {
@@ -376,7 +383,7 @@ div#copyright {
       letter-spacing: 2px;
       line-height: 5px; }
     .header-caption p.logo-smart-caption2 {
-      font-size: 10px;
+      font-size: 12.5px;
       margin-bottom: 10px;
       letter-spacing: 16.5px;
       margin-top: 0; }

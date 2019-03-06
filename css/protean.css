@@ -146,13 +146,14 @@ div#nav-background {
 #likeButtonWrapper0 {
     position: absolute;
     height: 32px;
-    width: 108px;
+    width: 190px;
 }
 
 #likeButtonWrapper {
     font-size: 14px;
     pointer-events: none;
     touch-action: none;
+    /* width: 200px; */
 }
 #framewrapper, #likeButtonWrapper {
     position: absolute;
@@ -160,17 +161,18 @@ div#nav-background {
 
 #gotoWrapper {
     font-size: 14px;
-    margin-left: 125px;
+    margin-left: 225px;
 }
 
 
 #headerCaptionButtonsWrapper {
-    width: 320px;
+    width: 450px;
     height: auto;
 }
 
 .gradiented {
     background-color: rgba(0, 0, 0, 0.2);
+    cursor: hand;
 }
 
 textarea#how-can-we-help {
