@@ -47,7 +47,7 @@
 
     var onLeftTogglerClick = function(e) {
         $('#collapsibleNavbar').collapse('toggle');
-
+        onAnyMenuOpen(e);
         if(typeof e !== "undefined") {
             if(isRightMenuOpen()) {
                 onRightTogglerClick();
@@ -56,14 +56,12 @@
     };
 
     var onLeftMenuShowing = function(e) {
-        $('body').addClass('noscroll');
-
         $('#grey-layer').css('z-index', 50);
         $('#grey-layer').removeClass('animated fadeOut');
     };
 
     var onLeftMenuShown = function(e) {
-
+        onAnyMenuOpen(e);
     };
 
     var onLeftMenuHiding = function(e) {
@@ -73,21 +71,19 @@
     var onLeftMenuHidden = function(e) {
         //$('#grey-layer').css('z-index', -1);
         if(!isRightMenuOpen()) {
-            $('#grey-layer').addClass('animated fadeOut');
+            onAllMenuClosed();
         }
     };
 
     // RIGHT MENU
 
     var onRightMenuShowing = function(e) {
-        $('body').addClass('noscroll');
-
         $('#grey-layer').css('z-index', 50);
         $('#grey-layer').removeClass('animated fadeOut');
     };
 
     var onRightMenuShown = function(e) {
-
+        onAnyMenuOpen();
     };
 
     var onRightMenuHiding = function(e) {
@@ -97,13 +93,13 @@
     var onRightMenuHidden = function(e) {
         //$('#grey-layer').css('z-index', -1);
         if(!isLeftMenuOpen()) {
-            $('#grey-layer').addClass('animated fadeOut');
+            onAllMenuClosed();
         }
     };
 
     var onRightTogglerClick = function(e) {
         $('#collapsibleNavbar2').collapse('toggle');
-
+        onAnyMenuOpen(e);
         if(typeof e !== "undefined") {
             if(isLeftMenuOpen()) {
                 onLeftTogglerClick();
@@ -117,6 +113,15 @@
 
     var isRightMenuOpen = function() {
         return $('#collapsibleNavbar2').hasClass('show');
+    };
+
+    var onAnyMenuOpen = function() {
+        $('body').addClass('noscroll');
+    };
+
+    var onAllMenuClosed = function () {
+        $('#grey-layer').addClass('animated fadeOut');
+        $('body').removeClass('noscroll');
     };
 
     $.fn.magicNav = function(options) {
