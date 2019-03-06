@@ -144,3 +144,51 @@ div#nav-background {
 textarea#how-can-we-help {
     height: 235px;
 }
+
+.rotatable.section-img-left {
+    transform: rotate(5deg);
+}
+
+.rotatable.section-img-right {
+    transform: rotate(-5deg);
+}
+
+@media (min-width: 768px) {
+    .rotatable.section-img-left {
+        transform: rotate(5.6deg);
+    }
+
+    .rotatable.section-img-right {
+        transform: rotate(-5.6deg);
+    }
+}
+
+@media (min-width: 1024px) {
+    .rotatable.section-img-left {
+        transform: rotate(3.2deg);
+    }
+
+    .rotatable.section-img-right {
+        transform: rotate(-3.2deg);
+    }
+}
+
+@media (min-width: 1440px) {
+    .rotatable.section-img-left {
+        transform: rotate(1.88deg);
+    }
+
+    .rotatable.section-img-right {
+        transform: rotate(-1.88deg);
+    }
+}
+
+@media (min-width: 2000px) {
+    .rotatable.section-img-left {
+        transform: rotate(0.5deg);
+    }
+
+    .rotatable.section-img-right {
+        transform: rotate(-0.5deg);
+    }
+}
