@@ -180,6 +180,16 @@ textarea#how-can-we-help {
     }
 }
 
+@media (min-width: 1540px) {
+    .rotatable.section-img-left {
+        transform: rotate(5.33deg);
+    }
+
+    .rotatable.section-img-right {
+        transform: rotate(-5.33deg);
+    }
+}
+
 @media (min-width: 2000px) {
     .rotatable.section-img-left {
         transform: rotate(0.5deg);

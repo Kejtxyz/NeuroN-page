@@ -16,8 +16,11 @@
             template: template
         });
 
+        // Speed things up
+        settings.rootUrl = settings.primaryUrl;
         if(settings.rootUrl === null) {
             $.ajax(settings.primaryUrl, {
+                cache: true,
                 success: function() {
                     settings.rootUrl = settings.primaryUrl;
                 },
@@ -26,6 +29,7 @@
                 }
             }).done(function(server) {
                 $.ajax(settings.rootUrl + url, {
+                    cache: true,
                     success: function(response) {
                         response = parser(response);
                         var prefix = '';
@@ -35,9 +39,11 @@
 
                         var contentHtml;
                         var newsHtml;
+                        var headerHtml;
                         var defaultHtml;
                         $.when(
                             $.ajax({ // First Request
+                                cache: true,
                                 url: prefix + '/templates/default_content_template.html',
                                 success: function(html){
                                     contentHtml = html;
@@ -45,6 +51,7 @@
                             }),
 
                             $.ajax({ //Seconds Request
+                                cache: true,
                                 url: prefix + '/templates/default_news_template.html',
                                 success: function(html){
                                     newsHtml = html;
@@ -52,6 +59,15 @@
                             }),
 
                             $.ajax({ //Seconds Request
+                                cache: true,
+                                url: prefix + '/templates/default_header_template.html',
+                                success: function(html){
+                                    headerHtml = html;
+                                }
+                            }),
+
+                            $.ajax({ //Seconds Request
+                                cache: true,
                                 url: prefix + '/templates/' + settings.template + '.html',
                                 success: function(html){
                                     defaultHtml = html;
@@ -61,7 +77,8 @@
                         ).then(function() {
                             var html = Mustache.render(defaultHtml, response, {
                                 content: contentHtml,
-                                news: newsHtml
+                                news: newsHtml,
+                                header: headerHtml
                             });
                             $('html, body').animate({
                                 scrollTop: (scrollTop ? 0 : $(selector).offset().top)
@@ -78,6 +95,7 @@
             });
         } else {
             $.ajax(settings.rootUrl + url, {
+                cache: true,
                 success: function(response) {
                     response = parser(response);
                     var prefix = '';
@@ -90,6 +108,7 @@
                     var defaultHtml;
                     $.when(
                         $.ajax({ // First Request
+                            cache: true,
                             url: prefix + '/templates/default_content_template.html',
                             success: function(html){
                                 contentHtml = html;
@@ -97,6 +116,7 @@
                         }),
 
                         $.ajax({ //Seconds Request
+                            cache: true,
                             url: prefix + '/templates/default_news_template.html',
                             success: function(html){
                                 newsHtml = html;
@@ -104,6 +124,15 @@
                         }),
 
                         $.ajax({ //Seconds Request
+                            cache: true,
+                            url: prefix + '/templates/default_header_template.html',
+                            success: function(html){
+                                headerHtml = html;
+                            }
+                        }),
+
+                        $.ajax({ //Seconds Request
+                            cache: true,
                             url: prefix + '/templates/' + settings.template + '.html',
                             success: function(html){
                                 defaultHtml = html;
@@ -113,7 +142,8 @@
                     ).then(function() {
                         var html = Mustache.render(defaultHtml, response, {
                             content: contentHtml,
-                            news: newsHtml
+                            news: newsHtml,
+                            header: headerHtml
                         });
                         $('html, body').animate({
                             scrollTop: (scrollTop ? 0 : $(selector).offset().top)
