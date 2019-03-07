@@ -16,12 +16,15 @@ function handleMobile() {
     }
 }
 
-function loadDefault() {
+function loadDefault(e, tab) {
+    if(typeof tab === "undefined") {
+        tab = $(e.target).data('content_loader');
+    }
     handleMobile();
 
     $(document).contentLoader(
         config,
-        '/api/tab/neuron_foundation',
+        '/api/tab/' + tab,
         'default_template',
         '#main',
         function(response) {
@@ -48,61 +51,38 @@ function loadDefault() {
     return false;
 }
 
-function loadNeuronFoundationContent() {
-    loadDefault();
+function loadNeuronFoundationContent(e) {
+    loadDefault(e);
     return false;
 }
 
-function loadNewNeuropsychiatryContent() {
-    loadDefault();
+function loadNewNeuropsychiatryContent(e) {
+    loadDefault(e);
     return false;
 }
 
-function loadNewNeuronDirectionContent() {
-    loadDefault();
+function loadNewNeuronDirectionContent(e) {
+    loadDefault(e);
     return false;
 }
 
-function loadOakesInnovateContent() {
-    handleMobile();
-    $(document).contentLoader(
-        config,
-        '/api/tab/neuron_foundation',
-        'oakes_innovate_template',
-        '#main',
-        function(response) {
-            $.each(response.articles, function(index) {
-                this.isEven = (index % 2 === 0);
-                this.index  = (index+1);
-            });
-            $.each(response.news, function(index) {
-                this.isEven         = (index % 2 === 0);
-            });
-
-            return {
-                articles:   response.articles,
-                news:       response.news
-            };
-        },
-        function() {
-            $('<script src="js/magicRotator.js"><\/script>').appendTo(document.body);
-        }
-    );
+function loadOakesInnovateContent(e) {
+    loadDefault(e);
     return false;
 }
 
-function loadNTVChannelContent() {
-    loadDefault();
+function loadNTVChannelContent(e) {
+    loadDefault(e);
     return false;
 }
 
-function loadOakesClinicContent() {
-    loadDefault();
+function loadOakesClinicContent(e) {
+    loadDefault(e);
     return false;
 }
 
-function loadOakAtlantisContent() {
-    loadDefault();
+function loadOakAtlantisContent(e) {
+    loadDefault(e);
     return false;
 }
 
@@ -288,7 +268,7 @@ function loadAboutUsContent() {
     return false;
 }
 
-$(document).ready(loadNeuronFoundationContent);
+$(document).ready(function(e) { loadDefault(e, "neuron_foundation"); });
 
 $(document).on('click', '[data-content_loader="neuron_foundation"]', loadNeuronFoundationContent);
 $(document).on('click', '[data-content_loader="new_neuropsychiatry"]', loadNewNeuropsychiatryContent);
