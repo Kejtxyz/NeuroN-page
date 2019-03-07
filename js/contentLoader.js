@@ -25,6 +25,7 @@ function loadDefault() {
         'default_template',
         '#main',
         function(response) {
+            console.log(response);
             $.each(response.articles, function(index) {
                 this.isEven = (index % 2 === 0);
                 this.index  = (index+1);
@@ -34,12 +35,14 @@ function loadDefault() {
             });
 
             return {
+                header:     response.header,
                 articles:   response.articles,
                 news:       response.news
             };
         },
         function() {
             $('<script src="js/magicRotator.js"><\/script>').appendTo(document.body);
+            $('<script src="js/magicLine.js"><\/script>').appendTo(document.body);
         }
     );
     return false;
