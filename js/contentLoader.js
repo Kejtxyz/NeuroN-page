@@ -262,7 +262,7 @@ function loadAboutUsContent() {
             return response;
         },
         function() {
-
+            $('<script src="js/magicLine.js"><\/script>').appendTo(document.body);
         }
     );
     return false;
