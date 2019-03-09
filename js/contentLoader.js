@@ -268,7 +268,39 @@ function loadAboutUsContent() {
     return false;
 }
 
+function loadSocialLinks() {
+    handleMobile();
+
+    var prefix = '';
+    if(window.location.host.indexOf('github') !== -1) {
+        prefix = '/NeuroN-page';
+    }
+
+    var templateHtml;
+    var socialLinksJson;
+    $.when(
+        $.ajax({ // First Request
+            cache: true,
+            url: prefix + '/templates/social_links.html',
+            success: function(html){
+                templateHtml = html;
+            }
+        }),
+        $.ajax({ // Json Request
+            cache: true,
+            url: config.primaryUrl + '/api/misc/social_link/fetch',
+            success: function(response){
+                socialLinksJson = response;
+            }
+        })
+    ).then(function() {
+        var html = Mustache.render(templateHtml, { socialLinks: socialLinksJson });
+        $('#social-links').html(html);
+    });
+}
+
 $(document).ready(function(e) { loadDefault(e, "neuron_foundation"); });
+$(document).ready(loadSocialLinks);
 
 $(document).on('click', '[data-content_loader="neuron_foundation"]', loadNeuronFoundationContent);
 $(document).on('click', '[data-content_loader="new_neuropsychiatry"]', loadNewNeuropsychiatryContent);
