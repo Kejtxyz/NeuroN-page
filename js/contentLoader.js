@@ -246,7 +246,7 @@ function loadContactContent() {
         function() {
 
         },
-        false
+        true
     );
     return false;
 }
